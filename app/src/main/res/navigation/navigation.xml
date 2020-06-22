@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/solicitudesFragment">
+
+    <fragment
+        android:id="@+id/solicitudesFragment"
+        android:name="co.edu.udea.saludpublica.fragments.SolicitudesFragment"
+        android:label="SolicitudesFragment" >
+        <action
+            android:id="@+id/action_solicitudesFragment_to_creacionSolicitudFragment"
+            app:destination="@id/creacionSolicitudFragment" />
+        <action
+            android:id="@+id/action_solicitudesFragment_to_respuestaFragment"
+            app:destination="@id/respuestaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/creacionSolicitudFragment"
+        android:name="co.edu.udea.saludpublica.fragments.CreacionSolicitudFragment"
+        android:label="fragment_creacion_solicitud"
+        tools:layout="@layout/fragment_creacion_solicitud" />
+    <fragment
+        android:id="@+id/respuestaFragment"
+        android:name="co.edu.udea.saludpublica.fragments.RespuestaFragment"
+        android:label="fragment_respuesta"
+        tools:layout="@layout/fragment_respuesta" />
+    <fragment
+        android:id="@+id/ayudaFragment"
+        android:name="co.edu.udea.saludpublica.fragments.AyudaFragment"
+        android:label="AyudaFragment" />
+</navigation>

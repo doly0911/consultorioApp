@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/solicitudesFragment"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/creacionSolicitudFragment"
+        android:title="Crear solicitud" />
+    <item
+        android:id="@+id/ayudaFragment"
+        android:title="Ayuda" />
+</menu>
