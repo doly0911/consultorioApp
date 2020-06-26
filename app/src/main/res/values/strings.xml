@@ -6,4 +6,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="datos_del_solicitante">Datos del solicitante</string>
+    <string name="email">E-mail</string>
+    <string name="nombre">Nombre:</string>
+    <string name="tel_cel">Teléfono/Cel:</string>
+    <string name="id">Id:</string>
+    <string name="descripcion_consulta">Realice una descripción de su consulta:</string>
+    <string name="recibir_respuesta">Medio por el cual desea recibir su respuesta:</string>
 </resources>

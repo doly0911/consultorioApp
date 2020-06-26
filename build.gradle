@@ -17,6 +17,7 @@ buildscript {
 
     ext{
         version_navigation = '1.0.0'
+        version_material = '1.1.0'
     }
 }
 

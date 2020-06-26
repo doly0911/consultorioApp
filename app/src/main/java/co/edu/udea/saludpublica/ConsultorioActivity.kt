@@ -9,7 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import co.edu.udea.saludpublica.databinding.ActivityConsultorioBinding
 
-class ConsultorioActivity : AppCompatActivity() {
+class  ConsultorioActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivityConsultorioBinding
     private lateinit var drawerLayout: DrawerLayout
@@ -29,6 +29,6 @@ class ConsultorioActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.nav_host_fragment)
-        return NavigationUI.navigateUp(navController,drawerLayout)
+        return NavigationUI.navigateUp(navController, drawerLayout)
     }
 }

@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <item
         android:id="@+id/solicitudesFragment"
-        android:title="Inicio" />
+        android:icon="@drawable/ic_home"
+        android:title="Inicio"
+        />
 
     <item
         android:id="@+id/creacionSolicitudFragment"
-        android:title="Crear solicitud" />
+        android:icon="@drawable/ic_add_box"
+        android:title="Crear solicitud"
+        />
     <item
         android:id="@+id/ayudaFragment"
+        android:icon="@drawable/ic_help"
         android:title="Ayuda" />
 </menu>
