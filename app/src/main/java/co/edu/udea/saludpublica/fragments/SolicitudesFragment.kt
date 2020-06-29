@@ -20,7 +20,7 @@ import co.edu.udea.saludpublica.models.Solicitud
 /**
  * A simple [Fragment] subclass.
  */
-class SolicitudesFragment : Fragment(),  SolicitudAdapter.OnClickInterface {
+class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClickListener {
 
     private lateinit var binding: FragmentSolicitudesBinding
     private lateinit var viewManager: RecyclerView.LayoutManager
@@ -46,13 +46,11 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.OnClickInterface {
         return DefaultSolicitudDao().getSolicitudes()
     }
 
-    override fun onItemClick(solicitud: Solicitud, view : View) {
-        Log.i("SolicitudesFragment",view.id.toString())
-        when(view.id){
-            R.id.btn_editar -> Log.i("SolicitudesFragment", "Btn editar")
-            R.id.btn_responder -> Log.i("SolicitudesFragment","Btn responder")
-        }
-
+    override fun btnEditarOnClick(solicitud: Solicitud, view : View) {
+        Log.i("SolicitudesFragment", "Btn editar")
     }
 
+    override fun btnResponderOnClick(solicitud: Solicitud, view: View) {
+        Log.i("SolicitudesFragment", "Btn responder")
+    }
 }
