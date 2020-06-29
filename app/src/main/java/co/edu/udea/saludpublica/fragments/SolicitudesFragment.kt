@@ -33,9 +33,7 @@ class SolicitudesFragment : Fragment() {
         binding = DataBindingUtil.inflate<FragmentSolicitudesBinding>(inflater, R.layout.fragment_solicitudes, container, false)
 
         viewManager = LinearLayoutManager(context)
-        val viewAdapter = SolicitudAdapter()
-        viewAdapter.SolicitudAdapter(getSolicitudes())
-
+        val viewAdapter = SolicitudAdapter(getSolicitudes())
         recyclerView = binding.recyclerViewSolicitudes.apply {
             layoutManager = viewManager
             adapter = viewAdapter
