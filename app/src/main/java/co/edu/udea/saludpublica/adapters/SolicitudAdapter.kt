@@ -2,13 +2,14 @@ package co.edu.udea.saludpublica.adapters
 
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.udea.saludpublica.databinding.SolicitudViewBinding
 import co.edu.udea.saludpublica.models.Solicitud
 import co.edu.udea.saludpublica.util.PrioridadEnum
 
-class SolicitudAdapter (private val data :List<Solicitud> ) : RecyclerView.Adapter<SolicitudAdapter.SolicitudViewHolder>() {
+class SolicitudAdapter (private val data :List<Solicitud>, private val onclick : OnClickInterface ) : RecyclerView.Adapter<SolicitudAdapter.SolicitudViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SolicitudViewHolder {
@@ -18,6 +19,14 @@ class SolicitudAdapter (private val data :List<Solicitud> ) : RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: SolicitudViewHolder, position: Int) {
+        holder.binding.btnEditar.setOnClickListener{
+            onclick.onItemClick(data[position],it)
+        }
+
+        holder.binding.btnResponder.setOnClickListener{
+            onclick.onItemClick(data[position],it)
+        }
+
         holder.bind(data[position])
     }
 
@@ -40,6 +49,10 @@ class SolicitudAdapter (private val data :List<Solicitud> ) : RecyclerView.Adapt
             }
         }
 
+    }
+
+    interface OnClickInterface {
+        fun onItemClick(solicitud: Solicitud, view : View)
     }
 
 }
