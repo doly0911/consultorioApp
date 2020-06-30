@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -51,6 +52,6 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
     }
 
     override fun btnResponderOnClick(solicitud: Solicitud, view: View) {
-        Log.i("SolicitudesFragment", "Btn responder")
+        view.findNavController().navigate(R.id.action_solicitudesFragment_to_respuestaFragment)
     }
 }
