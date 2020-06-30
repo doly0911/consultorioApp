@@ -1,14 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.RespuestaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello respuesta fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_datos_solicitud"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@android:drawable/arrow_down_float"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/layout_expansible_datos_solicitud"/>
+
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/layout_datos_solicitud"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    app:ael_expanded="true"
+                    app:ael_interpolator="accelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""/>
+
+
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_respuesta_solicitud"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@android:drawable/arrow_down_float"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/layout_expansible_respuesta_descripcion"/>
+
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/layout_respuesta_solicitud"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    app:ael_expanded="false"
+                    app:ael_duration ="400"
+                    app:ael_interpolator="accelerateDecelerate"
+                    app:ael_orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_respuesta_descripcion_key"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_respuesta_descripcion"
+                        android:labelFor="@id/txt_respuesta_descripcion_value"/>
+
+                    <EditText
+                        android:id="@+id/txt_respuesta_descripcion_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_respuesta_descripcion_key"
+                        android:inputType="textMultiLine"
+                        android:lines="1"
+                        android:autofillHints="@string/txt_respuesta_descripcion" />
+
+                    <Button
+                        android:id="@+id/btn_guardar_respuesta"
+                        android:layout_below="@id/txt_respuesta_descripcion_value"
+                        style="@style/custom_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_guardar_respuesta" />
+
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_trazabilidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@android:drawable/arrow_down_float"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/layout_expansible_trazabilidad" />
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/layout_trazabilidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    app:ael_expanded="false"
+                    app:ael_interpolator="anticipate"
+                    app:ael_duration ="0"
+                    app:ael_orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="4dp">
+
+
+                        <LinearLayout
+                            android:id="@+id/card_layout_trazabilidad"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:id="@+id/layout_movimiento"
+                                style="@style/card_layout">
+
+                                <TextView
+                                    android:id="@+id/txt_movimiento_key"
+                                    style="@style/card_txt_key"
+                                    android:text="@string/card_movimiento" />
+
+                                <TextView
+                                    android:id="@+id/txt_movimiento_value"
+                                    style="@style/card_txt_value"
+                                    android:text=""/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layout_usuario"
+                                style="@style/card_layout">
+
+                                <TextView
+                                    android:id="@+id/txt_usuario_key"
+                                    style="@style/card_txt_key"
+                                    android:text="@string/card_usuario" />
+
+                                <TextView
+                                    android:id="@+id/txt_usuario_value"
+                                    style="@style/card_txt_value"
+                                    android:text=""/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layout_fecha"
+                                style="@style/card_layout">
+
+                                <TextView
+                                    android:id="@+id/txt_fecha_key"
+                                    style="@style/card_txt_key"
+                                    android:text="@string/card_fecha" />
+
+                                <TextView
+                                    android:id="@+id/txt_fecha_value"
+                                    style="@style/card_txt_value"
+                                    android:text=""/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

@@ -32,4 +32,15 @@
         <item>Escrito</item>
     </string-array>
     <string name="prioridad_consulta">Prioridad de la Consulta:</string>
+    <!--layout expansible-->
+    <string name="layout_expansible_datos_solicitud">Datos de la solicitud</string>
+    <string name="layout_expansible_respuesta_descripcion">Respuesta a la solicitud</string>
+    <string name="layout_expansible_trazabilidad">Trazabilidad</string>
+    <string name="txt_respuesta_descripcion">Descripción de la respuesta</string>
+    <string name="btn_guardar_respuesta">Guardar</string>
+    <string name="card_movimiento">Movimiento:</string>
+    <string name="card_usuario">Usuario:</string>
+    <string name="card_fecha">Fecha:</string>
+
+
 </resources>
