@@ -19,8 +19,9 @@
         <ImageView
             android:id="@+id/titleImage"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="fitCenter"/>
+            android:layout_height="155dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_verde_udea"/>
 
         <TextView
             android:id="@+id/textView"
@@ -28,9 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
+            android:text="@string/app_title"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="27sp"
-            android:text="@string/app_title" />
+            android:textSize="27sp" />
 
         <Space
             android:layout_width="match_parent"
@@ -61,21 +62,26 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="30dp" />
 
         <Button
             android:id="@+id/loginButton"
             style="@style/custom_button"
-            android:layout_width="150dp"
-            android:layout_height="45dp"
-            android:text="@string/enter_button_str" />
+            android:layout_width="99dp"
+            android:layout_height="33dp"
+            android:fontFamily="@font/roboto_slab_regular"
+            android:text="@string/enter_button_str"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btn_registrarse"
-            android:layout_width="150dp"
+            style="@style/custom_button"
+            android:layout_width="101dp"
+            android:layout_height="35dp"
             android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:text="Registrarse" />
+            android:fontFamily="@font/roboto_slab_regular"
+            android:text="Registrarse"
+            android:textSize="12sp" />
 
     </LinearLayout>
 

@@ -1,236 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.CreacionSolicitudFragment">
 
-    <!-- DATOS DEL SOLICITANTE -->
-
     <!-- DATOS DESDE LA BD PARA SOLICITANTE-->
+<GridLayout
+    android:id="@+id/gridLayout_datos"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:layout_centerHorizontal="true">
 
     <TextView
-        android:id="@+id/txt_datos_solicitante"
+        android:id="@+id/txt_datosSolicitante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="20dp"
         android:text="@string/datos_del_solicitante" />
 
     <TextView
         android:id="@+id/txt_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="57dp"
+        android:layout_column="0"
+        android:layout_row="1"
         android:text="@string/id" />
-
     <TextView
-        android:id="@+id/txt_nombre"
+        android:id="@+id/txt_nombreSolitante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="76dp"
         android:text="@string/nombre" />
 
     <TextView
-        android:id="@+id/txt_email"
+        android:id="@+id/txt_correo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="96dp"
         android:text="@string/email" />
 
     <TextView
-        android:id="@+id/txt_tel"
+        android:id="@+id/txt_cel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="116dp"
         android:text="@string/tel_cel" />
 
     <TextView
-        android:id="@+id/txt_rta_id"
+        android:id="@+id/id_bd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="53dp"
-        android:text="byu34k67" />
+        android:layout_row="1"
+        android:layout_column="1"
+        android:text="byk98m7" />
 
     <TextView
-        android:id="@+id/txt_rta_nombre"
+        android:id="@+id/nombre_bd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="73dp"
         android:text="Santiago Muñoz" />
 
     <TextView
-        android:id="@+id/txt_rta_correo"
+        android:id="@+id/correo_bd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="91dp"
         android:text="santiago12@gmail.com" />
 
-    <!-- DETALLES CONSULTA-->
-
     <TextView
-        android:id="@+id/txt_rta_cel"
+        android:id="@+id/cel_bd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:text="312 678 4554" />
+
+
+</GridLayout>
+
+    <EditText
+        android:id="@+id/editTxt_asunto_consulta"
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridLayout_datos"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="112dp"
-        android:text="314 678 6789" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_asunto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="150dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="344dp"
-            android:layout_height="wrap_content"
-            android:hint="Asunto de su consulta" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/txt_descripcion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="224dp"
-        android:text="@string/descripcion_consulta" />
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:inputType="textPersonName|textCapWords"
+        android:hint="@string/asunto_de_su_consulta"/>
 
 
     <EditText
-        android:id="@+id/textArea_descripcion_consulta"
-        android:layout_width="368dp"
+        android:id="@+id/editTxt_descripcion_consulta"
+        android:layout_width="362dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txt_descripcion"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/colorPrimary"
+        android:layout_below="@id/editTxt_asunto_consulta"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:lines="2"
         android:inputType="textMultiLine"
-        android:lines="3" />
+        android:hint="@string/descripcion_consulta"/>
+
+    <GridLayout
+        android:id="@+id/gridLayout_medio_rta"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTxt_descripcion_consulta"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recibir_respuesta" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/respuesta_array" />
+    </GridLayout>
+
 
     <TextView
-        android:id="@+id/txt_documentos"
+        android:id="@+id/txt_prioridad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginBottom="92dp"
-        android:text="Documentos de soporte:" />
+        android:layout_below="@id/gridLayout_medio_rta"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/prioridad_consulta" />
 
     <RadioGroup
-        android:layout_width="334dp"
+        android:id="@+id/radioBtn_prioridad"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="135dp"
+        android:layout_below="@id/txt_prioridad"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioBtn_baja"
-            android:layout_width="114dp"
+            android:id="@+id/radioButton6"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Baja" />
+            android:layout_weight="1"
+            android:text="Alta" />
 
         <RadioButton
-            android:id="@+id/media"
-            android:layout_width="130dp"
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Media" />
 
         <RadioButton
-            android:id="@+id/radioBtn_alta"
-            android:layout_width="115dp"
+            android:id="@+id/radioButton8"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Alta" />
+            android:layout_weight="1"
+            android:text="Baja" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/btn_enviar"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/txt_anexar_documentos"
+        android:layout_width="199dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginBottom="11dp"
-        android:text="Enviar" />
+        android:layout_below="@+id/radioBtn_prioridad"
+        android:layout_marginStart="20dp"
+        android:text="Documentos para anexar" />
 
     <Button
-        android:id="@+id/btn_cancelar"
+        android:id="@+id/btn_subir_archivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="89dp"
-        android:layout_marginBottom="12dp"
-        android:text="Cancelar" />
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/txt_anexar_documentos"
+        android:drawableStart="@drawable/ic_file_upload"
+        android:fontFamily="@font/roboto_slab_regular"
+        android:text=" subir archivo"
+        android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/txt_medio_respuesta"
+    <ImageButton
+        android:id="@+id/imageBtn_guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginBottom="300dp"
-        android:text="Medio por el que desea recibir su respuesta:" />
+        android:layout_below="@id/btn_subir_archivo"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="167dp"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_icons8_comprobado"
+        android:tint="#00FDFCFC" />
 
-    <Spinner
-        android:id="@+id/spinner_medio_respuesta"
-        android:layout_width="275dp"
-        android:layout_height="26dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginBottom="243dp" />
-
-    <TextView
-        android:id="@+id/textView2"
+    <ImageButton
+        android:id="@+id/imageBtn_cancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginBottom="186dp"
-        android:text="Prioridad de la consulta:" />
+        android:layout_marginStart="55dp"
+        android:layout_marginBottom="166dp"
+        android:layout_toRightOf="@+id/imageBtn_guardar"
+        android:layout_below="@id/btn_subir_archivo"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_icons8_cancelar" />
 
 
 </RelativeLayout>

@@ -76,6 +76,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -86,6 +87,7 @@
         app:startIconDrawable="@drawable/ic_visibility_off">
 
         <com.google.android.material.textfield.TextInputEditText
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -93,24 +95,24 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageBtn_registrar"
         android:layout_width="61dp"
         android:layout_height="46dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="97dp"
-        android:layout_marginBottom="155dp"
+        android:layout_below="@id/input_password"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#FBFDFD"
         app:srcCompat="@drawable/ic_icons8_comprobado" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageBtn_no_registrar"
         android:layout_width="51dp"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="114dp"
-        android:layout_marginBottom="150dp"
+        android:layout_toRightOf="@+id/imageBtn_registrar"
+        android:layout_below="@+id/input_password"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="50dp"
         android:backgroundTint="#F8F4F4"
         android:tint="#00FAF7F7"
         app:srcCompat="@drawable/ic_icons8_cancelar" />
