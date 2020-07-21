@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout
@@ -23,6 +24,9 @@ class RespuestaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //Modificar el titulo del actionBar
+        (activity as AppCompatActivity).supportActionBar?.title = "Responder Solicitud"
+
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentRespuestaBinding>(inflater, R.layout.fragment_respuesta, container, false)
 

@@ -19,6 +19,7 @@
         android:id="@+id/txt_datosSolicitante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
         android:text="@string/datos_del_solicitante" />
 
     <TextView
@@ -178,36 +179,34 @@
 
     <Button
         android:id="@+id/btn_subir_archivo"
+        style="@style/custom_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="38dp"
         android:layout_below="@id/txt_anexar_documentos"
-        android:drawableStart="@drawable/ic_file_upload"
-        android:fontFamily="@font/roboto_slab_regular"
-        android:text=" subir archivo"
-        android:textSize="12sp" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:drawableStart="@drawable/ic_file_upload_white"
+        android:text=" subir archivo" />
 
     <ImageButton
         android:id="@+id/imageBtn_guardar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_below="@id/btn_subir_archivo"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="167dp"
-        android:backgroundTint="#FFFFFF"
+        android:layout_marginStart="130dp"
+        android:backgroundTint="#FBFDFD"
         android:src="@drawable/ic_icons8_comprobado"
         android:tint="#00FDFCFC" />
 
     <ImageButton
         android:id="@+id/imageBtn_cancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginBottom="166dp"
-        android:layout_toRightOf="@+id/imageBtn_guardar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_below="@id/btn_subir_archivo"
-        android:backgroundTint="#FFFFFF"
+        android:layout_marginStart="80dp"
+        android:layout_toRightOf="@+id/imageBtn_guardar"
+        android:backgroundTint="#FBFDFD"
         android:src="@drawable/ic_icons8_cancelar" />
 
 
