@@ -1,213 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.CreacionSolicitudFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- DATOS DESDE LA BD PARA SOLICITANTE-->
-<GridLayout
-    android:id="@+id/gridLayout_datos"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_margin="20dp"
-    android:layout_centerHorizontal="true">
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.CreacionSolicitudFragment">
 
-    <TextView
-        android:id="@+id/txt_datosSolicitante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="@string/datos_del_solicitante" />
-
-    <TextView
-        android:id="@+id/txt_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="1"
-        android:text="@string/id" />
-    <TextView
-        android:id="@+id/txt_nombreSolitante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nombre" />
-
-    <TextView
-        android:id="@+id/txt_correo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email" />
-
-    <TextView
-        android:id="@+id/txt_cel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tel_cel" />
-
-    <TextView
-        android:id="@+id/id_bd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="1"
-        android:layout_column="1"
-        android:text="byk98m7" />
-
-    <TextView
-        android:id="@+id/nombre_bd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Santiago Muñoz" />
-
-    <TextView
-        android:id="@+id/correo_bd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="santiago12@gmail.com" />
-
-    <TextView
-        android:id="@+id/cel_bd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="312 678 4554" />
-
-
-</GridLayout>
-
-    <EditText
-        android:id="@+id/editTxt_asunto_consulta"
-        android:layout_width="362dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/gridLayout_datos"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:inputType="textPersonName|textCapWords"
-        android:hint="@string/asunto_de_su_consulta"/>
-
-
-    <EditText
-        android:id="@+id/editTxt_descripcion_consulta"
-        android:layout_width="362dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTxt_asunto_consulta"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:lines="2"
-        android:inputType="textMultiLine"
-        android:hint="@string/descripcion_consulta"/>
-
-    <GridLayout
-        android:id="@+id/gridLayout_medio_rta"
-        android:layout_width="353dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTxt_descripcion_consulta"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView22"
+        <!-- DATOS DESDE LA BD PARA SOLICITANTE-->
+        <GridLayout
+            android:id="@+id/gridLayout_datos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/recibir_respuesta" />
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/txt_datosSolicitante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/datos_del_solicitante"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:text="@string/id" />
+
+            <TextView
+                android:id="@+id/txt_nombreSolitante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre" />
+
+            <TextView
+                android:id="@+id/txt_correo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email" />
+
+            <TextView
+                android:id="@+id/txt_cel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tel_cel" />
+
+            <TextView
+                android:id="@+id/id_bd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:text="byk98m7" />
+
+            <TextView
+                android:id="@+id/nombre_bd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Santiago Muñoz" />
+
+            <TextView
+                android:id="@+id/correo_bd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="santiago12@gmail.com" />
+
+            <TextView
+                android:id="@+id/cel_bd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="312 678 4554" />
+
+
+        </GridLayout>
+
+        <EditText
+            android:id="@+id/editTxt_asunto_consulta"
+            android:layout_width="362dp"
             android:layout_height="wrap_content"
-            android:entries="@array/respuesta_array" />
-    </GridLayout>
+            android:layout_below="@+id/gridLayout_datos"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:hint="@string/asunto_de_su_consulta"
+            android:inputType="textPersonName|textCapWords" />
 
 
-    <TextView
-        android:id="@+id/txt_prioridad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/gridLayout_medio_rta"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/prioridad_consulta" />
-
-    <RadioGroup
-        android:id="@+id/radioBtn_prioridad"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt_prioridad"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radioButton6"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/editTxt_descripcion_consulta"
+            android:layout_width="362dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Alta" />
+            android:layout_below="@id/editTxt_asunto_consulta"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:hint="@string/descripcion_consulta"
+            android:inputType="textMultiLine"
+            android:lines="2" />
 
-        <RadioButton
-            android:id="@+id/radioButton7"
-            android:layout_width="match_parent"
+        <GridLayout
+            android:id="@+id/gridLayout_medio_rta"
+            android:layout_width="353dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Media" />
+            android:layout_below="@id/editTxt_descripcion_consulta"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/radioButton8"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recibir_respuesta" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </GridLayout>
+
+
+        <TextView
+            android:id="@+id/txt_prioridad"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Baja" />
-    </RadioGroup>
+            android:layout_below="@id/gridLayout_medio_rta"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/prioridad_consulta" />
 
-    <TextView
-        android:id="@+id/txt_anexar_documentos"
-        android:layout_width="199dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/radioBtn_prioridad"
-        android:layout_marginStart="20dp"
-        android:text="Documentos para anexar" />
+        <RadioGroup
+            android:id="@+id/radioBtn_prioridad"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_prioridad"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_subir_archivo"
-        style="@style/custom_button"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:layout_below="@id/txt_anexar_documentos"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
-        android:drawableStart="@drawable/ic_file_upload_white"
-        android:text=" subir archivo" />
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Alta" />
 
-    <ImageButton
-        android:id="@+id/imageBtn_guardar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/btn_subir_archivo"
-        android:layout_marginStart="130dp"
-        android:backgroundTint="#FBFDFD"
-        android:src="@drawable/ic_icons8_comprobado"
-        android:tint="#00FDFCFC" />
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Media" />
 
-    <ImageButton
-        android:id="@+id/imageBtn_cancelar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/btn_subir_archivo"
-        android:layout_marginStart="80dp"
-        android:layout_toRightOf="@+id/imageBtn_guardar"
-        android:backgroundTint="#FBFDFD"
-        android:src="@drawable/ic_icons8_cancelar" />
+            <RadioButton
+                android:id="@+id/radioButton8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Baja" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_anexar_documentos"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioBtn_prioridad"
+            android:layout_marginStart="20dp"
+            android:text="Documentos para anexar" />
+
+        <Button
+            android:id="@+id/btn_subir_archivo"
+            style="@style/custom_button"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_below="@id/txt_anexar_documentos"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:drawableStart="@drawable/ic_file_upload_white"
+            android:text=" subir archivo" />
+
+        <ImageButton
+            android:id="@+id/imageBtn_guardar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/btn_subir_archivo"
+            android:layout_marginStart="130dp"
+            android:backgroundTint="#FBFDFD"
+            android:src="@drawable/ic_icons8_comprobado"
+            android:tint="#00FDFCFC" />
+
+        <ImageButton
+            android:id="@+id/imageBtn_cancelar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/btn_subir_archivo"
+            android:layout_marginStart="80dp"
+            android:layout_toRightOf="@+id/imageBtn_guardar"
+            android:backgroundTint="#FBFDFD"
+            android:src="@drawable/ic_icons8_cancelar" />
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</layout>
