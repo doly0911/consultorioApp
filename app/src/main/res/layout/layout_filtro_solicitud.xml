@@ -1,93 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="20dp"
-    android:padding="20dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/txt_cedula"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="Por Cédula" />
+        android:text="Por Cédula"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/input_cedula_filtro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textColorLink="@color/colorPrimaryDark"
+        android:hint=""
         android:inputType="number"
-        android:hint=""/>
+        android:textColorLink="@color/colorPrimaryDark" />
 
     <TextView
         android:id="@+id/txt_persona"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="Por Persona" />
+        android:layout_marginTop="10dp"
+        android:text="Por Persona"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/input_persona_filtro"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:ems="10"
-        android:textColorLink="@color/colorPrimaryDark"
+        android:hint=""
         android:inputType="textNoSuggestions"
-        android:hint=""/>
+        android:textColorLink="@color/colorPrimaryDark" />
 
     <TextView
         android:id="@+id/txt_prioridad"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="Por Prioridad" />
+        android:layout_marginTop="20dp"
+        android:text="Por Prioridad"
+        android:textSize="14sp" />
 
-    <com.google.android.material.chip.ChipGroup
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:chipSpacingHorizontal="20dp"
-        >
+        android:orientation="horizontal">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip2"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:padding="10dp"
-
-            android:layout_margin="10dp"
-            android:elevation="4dp"
-            android:textColor="@color/colorPrimaryDark"
+        <CheckBox
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Alta"/>
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip3"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_margin="10dp"
+            android:background="@drawable/radio_btn_selector"
+            android:button="@android:color/transparent"
             android:elevation="4dp"
-            android:textColor="@color/colorPrimaryDark"
+            android:padding="10dp"
+            android:text="Alta"
+            android:layout_weight="5"
+            android:textAlignment="center"
+            android:textColor="@drawable/radio_btn_textcolor" />
+
+        <CheckBox
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/radio_btn_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:padding="10dp"
+            android:layout_weight="5"
+            android:textAlignment="center"
+            android:textColor="@drawable/radio_btn_textcolor"
             android:text="Media"/>
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip4"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
+        <CheckBox
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:layout_margin="10dp"
+            android:background="@drawable/radio_btn_selector"
+            android:button="@android:color/transparent"
             android:elevation="4dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Baja"/>
-    </com.google.android.material.chip.ChipGroup>
+            android:padding="10dp"
+            android:text="Baja"
+            android:layout_weight="5"
+            android:textAlignment="center"
+            android:textColor="@drawable/radio_btn_textcolor" />
+
+    </LinearLayout>
 
 
 </LinearLayout>
