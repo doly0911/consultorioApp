@@ -1,12 +1,14 @@
 package co.edu.udea.saludpublica.fragments
 
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -46,6 +48,40 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
             adapter = viewAdapter
         }
         return binding.root
+
+
+    }
+//MENU PARA FILTRAR
+    //enable options menu in this fragment
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+    }
+    //inflate the menu
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.filtrar_solicitudes_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+    //handle item clicks of menu
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item!!.itemId
+        //handle item clicks
+        if (id == R.id.filtro_menu){
+            //mostrar el Dialog
+            val mAlertDialog = AlertDialog.Builder(this.getView()?.context)
+                .setTitle("Búsqueda Avanzada")
+                .setView(R.layout.layout_filtro_solicitud)
+                .setNegativeButton("Cancelar") { dialog: DialogInterface?, which: Int ->
+                    dialog?.dismiss()
+                }
+                .setPositiveButton("Aplicar") { dialog: DialogInterface?, which: Int ->
+                    Log.d("Tag","Prueba")
+                }
+
+            // Create the AlertDialog object and return it
+            mAlertDialog.show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun getSolicitudes() : List<Solicitud>{

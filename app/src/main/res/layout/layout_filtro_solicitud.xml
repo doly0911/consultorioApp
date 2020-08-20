@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:padding="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_cedula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Por Cédula" />
+
+    <EditText
+        android:id="@+id/input_cedula_filtro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:inputType="number"
+        android:hint=""/>
+
+    <TextView
+        android:id="@+id/txt_persona"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Por Persona" />
+
+    <EditText
+        android:id="@+id/input_persona_filtro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:inputType="textNoSuggestions"
+        android:hint=""/>
+
+    <TextView
+        android:id="@+id/txt_prioridad"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Por Prioridad" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:chipSpacingHorizontal="20dp"
+        >
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip2"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+
+            android:layout_margin="10dp"
+            android:elevation="4dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="wrap_content"
+            android:text="Alta"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:elevation="4dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Media"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip4"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:elevation="4dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Baja"/>
+    </com.google.android.material.chip.ChipGroup>
+
+
+</LinearLayout>

@@ -29,7 +29,8 @@
             android:id="@+id/input_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14dp"
+            android:textSize="14sp"
+            android:inputType="number"
             android:hint="@string/identificacion_registro" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,6 +65,7 @@
             android:id="@+id/input_apellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="14sp"
             android:hint="@string/apellidos_registro" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,6 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:textSize="14sp"
         android:layout_below="@+id/txtField_apellidos"
         app:startIconDrawable="@drawable/ic_email">
 

@@ -55,5 +55,15 @@
     <!-- Login labels-->
     <string name="no_tienes_cuenta">¿No tienes cuenta?</string>
 
+    <!-- Filter labels-->
+    <string name="cedula_filtros">Cédula</string>
+    <string name="persona_filtros">Persona</string>
+
+    <string-array name="prioridad_array">
+        <item>Alta</item>
+        <item>Media</item>
+        <item>Baja</item>
+    </string-array>
+
 
 </resources>
