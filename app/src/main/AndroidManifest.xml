@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".RegistoUsuarioActivity"></activity>
         <activity android:name=".ConsultorioActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

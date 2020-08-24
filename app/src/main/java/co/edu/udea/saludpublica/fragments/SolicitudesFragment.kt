@@ -69,7 +69,6 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
         if (id == R.id.filtro_menu){
             //mostrar el Dialog
             val mAlertDialog = AlertDialog.Builder(this.getView()?.context)
-                .setTitle("Búsqueda Avanzada")
                 .setView(R.layout.layout_filtro_solicitud)
                 .setNegativeButton("Cancelar") { dialog: DialogInterface?, which: Int ->
                     dialog?.dismiss()
