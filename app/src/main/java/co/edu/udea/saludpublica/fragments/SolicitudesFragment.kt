@@ -52,8 +52,10 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
             adapter = viewAdapter
         }
 
-        //le asigno el id al boton flotante y al dar click lo redirijo a crear solicitud
+        //le asigno el id al boton flotante y al dar click lo redirijo al fragmento crear solicitud
         binding.fabCrearSolicitud.setOnClickListener {
+            view?.findNavController()?.
+            navigate(SolicitudesFragmentDirections.actionSolicitudesFragmentToCreacionSolicitudFragment(null))
             }
         return binding.root
     }

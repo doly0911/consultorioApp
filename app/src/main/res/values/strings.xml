@@ -53,6 +53,11 @@
     <!-- Filter labels-->
     <string name="cedula_filtros">Cédula</string>
     <string name="persona_filtros">Persona</string>
+    <string name="alta_prioridad">Alta</string>
+    <string name="media_prioridad">Media</string>
+    <string name="baja_prioridad">Baja</string>
+    <string name="documentos_para_anexar">Documentos para anexar</string>
+    <string name="subir_archivo">subir archivo</string>
 
     <string-array name="prioridad_array">
         <item>Alta</item>
