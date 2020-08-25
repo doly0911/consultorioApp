@@ -1,7 +1,8 @@
 package co.edu.udea.saludpublica.dao
 
+import co.edu.udea.saludpublica.enums.MedioRespuestaEnum
 import co.edu.udea.saludpublica.models.Solicitud
-import co.edu.udea.saludpublica.util.PrioridadEnum
+import co.edu.udea.saludpublica.enums.PrioridadEnum
 
 class DefaultSolicitudDao : SolicitudDao {
     override fun getSolicitudes(): List<Solicitud> {

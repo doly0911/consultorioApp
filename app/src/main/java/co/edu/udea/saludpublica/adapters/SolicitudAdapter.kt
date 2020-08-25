@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.udea.saludpublica.databinding.SolicitudViewBinding
 import co.edu.udea.saludpublica.models.Solicitud
-import co.edu.udea.saludpublica.util.PrioridadEnum
+import co.edu.udea.saludpublica.enums.PrioridadEnum
 
 class SolicitudAdapter (private val data :List<Solicitud>, private val onclick : SolicitudAdapterOnClickListener ) : RecyclerView.Adapter<SolicitudAdapter.SolicitudViewHolder>() {
 

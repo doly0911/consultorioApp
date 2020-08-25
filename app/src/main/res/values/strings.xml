@@ -26,11 +26,6 @@
     <string name="descripcion_consulta">Descripción</string>
     <string name="recibir_respuesta">Medio por el cual desea recibir su respuesta:</string>
     <string name="asunto_de_su_consulta">Asunto de su consulta</string>
-    <string-array name="respuesta_array">
-        <item>Correo</item>
-        <item>Teléfono</item>
-        <item>Escrito</item>
-    </string-array>
     <string name="prioridad_consulta">Prioridad de la Consulta:</string>
 
     <!--layout expansible-->

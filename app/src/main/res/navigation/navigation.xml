@@ -20,12 +20,22 @@
         android:id="@+id/creacionSolicitudFragment"
         android:name="co.edu.udea.saludpublica.fragments.CreacionSolicitudFragment"
         android:label="fragment_creacion_solicitud"
-        tools:layout="@layout/fragment_creacion_solicitud" />
+        tools:layout="@layout/fragment_creacion_solicitud">
+        <argument
+            android:name="solicitud"
+            app:argType="co.edu.udea.saludpublica.models.Solicitud"
+            app:nullable="true" />
+    </fragment>
     <fragment
         android:id="@+id/respuestaFragment"
         android:name="co.edu.udea.saludpublica.fragments.RespuestaFragment"
         android:label="fragment_respuesta"
-        tools:layout="@layout/fragment_respuesta" />
+        tools:layout="@layout/fragment_respuesta">
+        <argument
+            android:name="solicitud"
+            app:argType="co.edu.udea.saludpublica.models.Solicitud"
+            app:nullable="false" />
+    </fragment>
     <fragment
         android:id="@+id/ayudaFragment"
         android:name="co.edu.udea.saludpublica.fragments.AyudaFragment"

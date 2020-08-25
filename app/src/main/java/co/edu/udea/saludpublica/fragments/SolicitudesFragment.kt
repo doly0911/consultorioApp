@@ -96,9 +96,12 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
 
     override fun btnEditarOnClick(solicitud: Solicitud, view : View) {
         Log.i("SolicitudesFragment", "Btn editar")
+        view.findNavController().
+            navigate(SolicitudesFragmentDirections.actionSolicitudesFragmentToCreacionSolicitudFragment(solicitud))
+
     }
 
     override fun btnResponderOnClick(solicitud: Solicitud, view: View) {
-        view.findNavController().navigate(R.id.action_solicitudesFragment_to_respuestaFragment)
+        view.findNavController().navigate(SolicitudesFragmentDirections.actionSolicitudesFragmentToRespuestaFragment(solicitud))
     }
 }

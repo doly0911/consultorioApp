@@ -1,4 +1,4 @@
-package co.edu.udea.saludpublica.util
+package co.edu.udea.saludpublica.enums
 
 enum class PrioridadEnum {
     ALTA {
