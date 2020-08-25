@@ -3,6 +3,7 @@ package co.edu.udea.saludpublica.fragments
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -16,10 +17,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import co.edu.udea.saludpublica.R
+import co.edu.udea.saludpublica.RegistoUsuarioActivity
 import co.edu.udea.saludpublica.adapters.SolicitudAdapter
 import co.edu.udea.saludpublica.dao.DefaultSolicitudDao
 import co.edu.udea.saludpublica.databinding.FragmentSolicitudesBinding
 import co.edu.udea.saludpublica.models.Solicitud
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.*
 
 /**
  * A simple [Fragment] subclass.
@@ -47,10 +51,13 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
             layoutManager = viewManager
             adapter = viewAdapter
         }
+
+        //le asigno el id al boton flotante y al dar click lo redirijo a crear solicitud
+        binding.fabCrearSolicitud.setOnClickListener {
+            }
         return binding.root
-
-
     }
+
 //MENU PARA FILTRAR
     //enable options menu in this fragment
     override fun onCreate(savedInstanceState: Bundle?) {
