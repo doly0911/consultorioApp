@@ -20,50 +20,45 @@
 
                 <Button
                     android:id="@+id/btn_datos_solicitud"
+                    style="@style/button_layout_expandable"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@android:drawable/arrow_down_float"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    style="@style/_layout_expandable"
-                    android:text="@string/layout_expansible_datos_solicitud"/>
+                    android:text="@string/layout_expansible_datos_solicitud" />
 
 
                 <com.github.aakira.expandablelayout.ExpandableRelativeLayout
-                    android:id="@+id/layout_datos_solicitud"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
+                    android:id="@+id/expandablelayout_datos_solicitud"
+                    style="@style/layout_expandable"
                     app:ael_expanded="true"
                     app:ael_interpolator="accelerate"
                     app:ael_orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""/>
+                    <include layout="@layout/layout_datos_solicitud"
+                        android:id="@+id/layout_datos_solicitud"/>
 
 
                 </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
                 <Button
                     android:id="@+id/btn_respuesta_solicitud"
+                    style="@style/button_layout_expandable"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@android:drawable/arrow_down_float"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    style="@style/_layout_expandable"
-                    android:text="@string/layout_expansible_respuesta_descripcion"/>
+                    android:text="@string/layout_expansible_respuesta_descripcion" />
 
 
                 <com.github.aakira.expandablelayout.ExpandableRelativeLayout
-                    android:id="@+id/layout_respuesta_solicitud"
+                    android:id="@+id/expandablelayout_respuesta_solicitud"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
+                    style="@style/layout_expandable"
+                    app:ael_duration="400"
                     app:ael_expanded="false"
-                    app:ael_duration ="400"
                     app:ael_interpolator="accelerateDecelerate"
                     app:ael_orientation="vertical">
 
@@ -71,49 +66,47 @@
                         android:id="@+id/txt_respuesta_descripcion_key"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/txt_respuesta_descripcion"
-                        android:labelFor="@id/txt_respuesta_descripcion_value"/>
+                        android:labelFor="@id/txt_respuesta_descripcion_value"
+                        android:text="@string/txt_respuesta_descripcion" />
 
                     <EditText
                         android:id="@+id/txt_respuesta_descripcion_value"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txt_respuesta_descripcion_key"
-                        android:inputType="textMultiLine"
-                        android:autofillHints="@string/txt_respuesta_descripcion" />
+                        android:autofillHints="@string/txt_respuesta_descripcion"
+                        android:inputType="textMultiLine" />
 
                     <Button
                         android:id="@+id/btn_guardar_respuesta"
-                        android:layout_below="@id/txt_respuesta_descripcion_value"
-                        android:fontFamily="@font/roboto_slab_regular"
-                        android:textSize="12dp"
-                        android:backgroundTint="@color/colorPrimaryDark"
-                        android:textColor="@color/letra_blanca"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_respuesta_descripcion_value"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/btn_guardar_respuesta" />
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:fontFamily="@font/roboto_slab_regular"
+                        android:text="@string/btn_guardar_respuesta"
+                        android:textColor="@color/letra_blanca"
+                        android:textSize="12sp" />
 
                 </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
                 <Button
                     android:id="@+id/btn_trazabilidad"
+                    style="@style/button_layout_expandable"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@android:drawable/arrow_down_float"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    style="@style/_layout_expandable"
                     android:text="@string/layout_expansible_trazabilidad" />
 
                 <com.github.aakira.expandablelayout.ExpandableRelativeLayout
-                    android:id="@+id/layout_trazabilidad"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
+                    android:id="@+id/expandablelayout_trazabilidad"
+                    style="@style/layout_expandable"
+                    app:ael_duration="0"
                     app:ael_expanded="false"
                     app:ael_interpolator="anticipate"
-                    app:ael_duration ="0"
                     app:ael_orientation="vertical">
 
                     <androidx.cardview.widget.CardView
@@ -144,7 +137,7 @@
                                 <TextView
                                     android:id="@+id/txt_movimiento_value"
                                     style="@style/card_txt_value"
-                                    android:text=""/>
+                                    android:text="" />
 
                             </LinearLayout>
 
@@ -160,7 +153,7 @@
                                 <TextView
                                     android:id="@+id/txt_usuario_value"
                                     style="@style/card_txt_value"
-                                    android:text=""/>
+                                    android:text="" />
 
                             </LinearLayout>
 
@@ -176,7 +169,7 @@
                                 <TextView
                                     android:id="@+id/txt_fecha_value"
                                     style="@style/card_txt_value"
-                                    android:text=""/>
+                                    android:text="" />
 
                             </LinearLayout>
 
