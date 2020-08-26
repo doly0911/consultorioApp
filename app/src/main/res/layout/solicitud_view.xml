@@ -79,22 +79,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/layout_descripcion"
-                style="@style/card_layout">
-
-                <TextView
-                    android:id="@+id/txt_descripcion_key"
-                    style="@style/card_txt_key"
-                    android:text="@string/card_descripcion" />
-
-                <TextView
-                    android:id="@+id/txt_descripcion_value"
-                    style="@style/card_txt_value"
-                    android:text="@{solicitud.descripcion}"/>
-
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/layout_prioridad"
                 style="@style/card_layout">
 
@@ -107,6 +91,22 @@
                     android:id="@+id/txt_prioridad_value"
                     style="@style/card_txt_value"
                     android:text="@{solicitud.prioridad.toString()}"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_descripcion"
+                style="@style/card_layout">
+
+                <TextView
+                    android:id="@+id/txt_descripcion_key"
+                    style="@style/card_txt_key"
+                    android:text="@string/card_descripcion" />
+
+                <TextView
+                    android:id="@+id/txt_descripcion_value"
+                    style="@style/card_txt_value"
+                    android:text="@{solicitud.descripcion}"/>
 
             </LinearLayout>
 

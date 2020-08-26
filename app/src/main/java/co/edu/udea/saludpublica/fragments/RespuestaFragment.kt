@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout
 import co.edu.udea.saludpublica.R
 import co.edu.udea.saludpublica.databinding.FragmentRespuestaBinding
+import co.edu.udea.saludpublica.models.Solicitud
 
 
 /**
@@ -27,12 +28,16 @@ class RespuestaFragment : Fragment() {
         //Modificar el titulo del actionBar
         (activity as AppCompatActivity).supportActionBar?.title = "Responder Solicitud"
 
+        val args = arguments?.let { CreacionSolicitudFragmentArgs.fromBundle(it) }
+        val solicitud : Solicitud? = args?.solicitud
+
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentRespuestaBinding>(inflater, R.layout.fragment_respuesta, container, false)
+        populateFragment(solicitud)
 
-        val layoutDatosSolicitud : ExpandableRelativeLayout = binding.layoutDatosSolicitud
-        val layoutRespuestaSolicitud : ExpandableRelativeLayout = binding.layoutRespuestaSolicitud
-        val layoutTrazabilidad : ExpandableRelativeLayout = binding.layoutTrazabilidad
+        val layoutDatosSolicitud : ExpandableRelativeLayout = binding.expandablelayoutDatosSolicitud
+        val layoutRespuestaSolicitud : ExpandableRelativeLayout = binding.expandablelayoutRespuestaSolicitud
+        val layoutTrazabilidad : ExpandableRelativeLayout = binding.expandablelayoutTrazabilidad
 
         toogleLayout(binding.btnDatosSolicitud,layoutDatosSolicitud )
         toogleLayout(binding.btnRespuestaSolicitud,layoutRespuestaSolicitud )
@@ -50,9 +55,18 @@ class RespuestaFragment : Fragment() {
     }
 
     private fun collapseLayout(layouts : List<ExpandableRelativeLayout>){
-       layouts.forEach{
-           it.collapse()
-       }
+        layouts.forEach{
+            it.collapse()
+        }
+    }
+
+    private fun populateFragment(solicitud: Solicitud?){
+        binding.layoutDatosSolicitud.apply {
+            txtAsuntoValue.text = solicitud?.asunto
+            txtDescripcionValue.text = solicitud?.descripcion
+            txtMedioRespuestaValue.text = solicitud?.medio.toString()
+            txtPrioridadValue.text = solicitud?.prioridad.toString()
+        }
     }
 
 

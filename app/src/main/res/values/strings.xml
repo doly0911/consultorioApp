@@ -24,9 +24,14 @@
     <string name="tel_cel"><b>Teléfono/Cel:</b></string>
 
     <string name="descripcion_consulta">Descripción</string>
+    <string name="descripcion_consulta_bold"><b>Descripción:</b></string>
     <string name="recibir_respuesta">Medio por el cual desea recibir su respuesta:</string>
+    <string name="recibir_respuesta_bold"><b>Medio por el cual desea recibir su respuesta:</b></string>
     <string name="asunto_de_su_consulta">Asunto de su consulta</string>
+    <string name="asunto_de_su_consulta_bold"><b>Asunto de su consulta:</b></string>
     <string name="prioridad_consulta">Prioridad de la Consulta:</string>
+    <string name="prioridad_consulta_bold"><b>Prioridad de la Consulta:</b></string>
+
 
     <!--layout expansible-->
     <string name="layout_expansible_datos_solicitud">Datos de la solicitud</string>
