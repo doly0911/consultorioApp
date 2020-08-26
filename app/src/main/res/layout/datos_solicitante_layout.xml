@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/gridLayout_datos"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_margin="20dp"
+    android:padding="5dp"
+    android:layout_margin="5dp"
+    android:background="@color/colorSombreado"
     android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/txt_datosSolicitante"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/datos_del_solicitante"
-            android:textSize="18sp" />
+    <TextView
+        android:id="@+id/txt_datosSolicitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:text="@string/datos_del_solicitante"
+        android:textSize="18sp" />
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
 
         <TextView
             android:id="@+id/txt_id"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="0"
+            android:gravity="start"
             android:text="@string/id" />
+
+        <TextView
+            android:id="@+id/txt_id_value"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="byk98m7" />
+
+    </TableRow>
+
+    <TableRow>
 
         <TextView
             android:id="@+id/txt_nombre_solicitante"
@@ -31,36 +48,37 @@
             android:text="@string/nombre" />
 
         <TextView
+            android:id="@+id/txt_nombre_solicitante_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jhonatan Alexander Orozco Blandon" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
             android:id="@+id/txt_correo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/email" />
 
         <TextView
+            android:id="@+id/txt_correo_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="santiago12@gmail.com" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
             android:id="@+id/txt_cel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
             android:text="@string/tel_cel" />
-
-        <TextView
-            android:id="@+id/txt_id_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:text="byk98m7" />
-
-        <TextView
-            android:id="@+id/txt_nombre_solicitante_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Santiago Muñoz" />
-
-        <TextView
-            android:id="@+id/txt_correo_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="santiago12@gmail.com" />
 
         <TextView
             android:id="@+id/txt_cel_value"
@@ -68,6 +86,6 @@
             android:layout_height="wrap_content"
             android:text="312 678 4554" />
 
+    </TableRow>
 
-
-</GridLayout>
+</TableLayout>

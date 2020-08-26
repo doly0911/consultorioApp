@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     tools:context=".RegistoUsuarioActivity">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_bienvenida"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginBottom="20dp"
         android:textSize="18sp"
         android:layout_centerHorizontal="true"
-        android:textAlignment="center"
         android:text="@string/bienvenida_registrarse"/>
 
 
@@ -21,8 +21,6 @@
         android:id="@+id/txtField_identificacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_below="@+id/txt_bienvenida"
         app:startIconDrawable="@drawable/ic_vpn_key_24dp">
 
@@ -40,8 +38,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtField_identificacion"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -56,8 +52,6 @@
         android:id="@+id/txtField_apellidos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_below="@+id/txtField_nombre"
         app:startIconDrawable="@drawable/ic_person">
 
@@ -74,8 +68,6 @@
         android:id="@+id/txtField_correo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:textSize="14sp"
         android:layout_below="@+id/txtField_apellidos"
         app:startIconDrawable="@drawable/ic_email">
@@ -93,8 +85,6 @@
         android:id="@+id/txtField_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_below="@+id/txtField_correo"
         app:startIconDrawable="@drawable/ic_visibility_off">
 
@@ -108,18 +98,12 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<RelativeLayout
-    android:id="@+id/layout_botones_registro"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:layout_margin="20dp"
-    android:layout_below="@+id/txtField_password">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/txtField_password">
 
     <ImageButton
         android:id="@+id/imageBtn_registrar"
@@ -139,6 +123,6 @@
             android:backgroundTint="#FBFDFD"
             app:srcCompat="@drawable/ic_icons8_cancelar" />
     </LinearLayout>
-</RelativeLayout>
+
 
 </RelativeLayout>

@@ -51,10 +51,10 @@ class CreacionSolicitudFragment : Fragment() {
             editTxtAsuntoConsulta.setText(solicitud?.asunto)
             editTxtDescripcionConsulta.setText(solicitud?.descripcion)
             when(solicitud?.prioridad){
-                PrioridadEnum.ALTA -> radioBtnPrioridad.check(radioButton6.id)
-                PrioridadEnum.MEDIA -> radioBtnPrioridad.check(radioButton7.id)
-                PrioridadEnum.BAJA -> radioBtnPrioridad.check(radioButton8.id)
-                else -> radioBtnPrioridad.check(radioButton6.id)
+                PrioridadEnum.ALTA -> radioBtnPrioridad.check(rbtonAlta.id)
+                PrioridadEnum.MEDIA -> radioBtnPrioridad.check(rbtonMedia.id)
+                PrioridadEnum.BAJA -> radioBtnPrioridad.check(rbtonBaja.id)
+                else -> radioBtnPrioridad.check(rbtonAlta.id)
             }
 
             when(solicitud?.medio){

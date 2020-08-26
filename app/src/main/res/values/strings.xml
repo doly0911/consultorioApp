@@ -40,7 +40,7 @@
 
     <!-- Registrarse labels-->
     <string name="registrarse"><u>Registrarse</u></string>
-    <string name="bienvenida_registrarse">Bienvenidos al Consultorio, por favor ingresar los siguientes datos</string>
+    <string name="bienvenida_registrarse">Bienvenidos al Consultorio. Por favor ingresa los siguientes datos:</string>
     <string name="identificacion_registro">Número de Identificación</string>
     <string name="nombre_registro">Nombre</string>
     <string name="apellidos_registro">Apellidos</string>
@@ -56,8 +56,10 @@
     <string name="alta_prioridad">Alta</string>
     <string name="media_prioridad">Media</string>
     <string name="baja_prioridad">Baja</string>
-    <string name="documentos_para_anexar">Documentos para anexar</string>
+    <string name="documentos_para_anexar">Documentos para anexar:</string>
     <string name="subir_archivo">subir archivo</string>
+    <string name="busqueda_avanzada">Búsqueda Avanzada</string>
+    <string name="por_cedula">Por Cédula</string>
 
     <string-array name="prioridad_array">
         <item>Alta</item>

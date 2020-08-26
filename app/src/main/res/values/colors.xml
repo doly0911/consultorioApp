@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#01602D</color>
     <color name="colorAccent">#01602D</color>
     <color name="letra_blanca">#Ffffff</color>
+    <color name="colorSombreado">#6DA9ACAA</color>
 
 
 </resources>

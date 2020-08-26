@@ -4,54 +4,53 @@
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:padding="5dp"
         tools:context=".fragments.CreacionSolicitudFragment">
 
         <!-- DATOS DESDE LA BD PARA SOLICITANTE-->
-        <include layout="@layout/datos_solicitante_layout"/>
+        <include layout="@layout/datos_solicitante_layout" />
 
 
         <EditText
             android:id="@+id/editTxt_asunto_consulta"
-            android:layout_width="362dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/gridLayout_datos"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="@string/asunto_de_su_consulta"
+            android:maxLines="2"
             android:inputType="textPersonName|textCapWords" />
 
 
         <EditText
             android:id="@+id/editTxt_descripcion_consulta"
-            android:layout_width="362dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTxt_asunto_consulta"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             android:ems="10"
             android:hint="@string/descripcion_consulta"
             android:inputType="textMultiLine"
-            android:lines="2" />
+            android:maxLines="4" />
 
         <GridLayout
             android:id="@+id/gridLayout_medio_rta"
-            android:layout_width="353dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTxt_descripcion_consulta"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txt_medio_recibir_rta"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:text="@string/recibir_respuesta" />
 
             <Spinner
@@ -63,20 +62,17 @@
 
         <TextView
             android:id="@+id/txt_prioridad"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/gridLayout_medio_rta"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
             android:text="@string/prioridad_consulta" />
 
         <RadioGroup
             android:id="@+id/radioBtn_prioridad"
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_prioridad"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
@@ -104,59 +100,52 @@
 
         <TextView
             android:id="@+id/txt_anexar_documentos"
-            android:layout_width="199dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/radioBtn_prioridad"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
             android:text="@string/documentos_para_anexar" />
 
         <Button
             android:id="@+id/btn_subir_archivo"
             style="@style/custom_button"
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_anexar_documentos"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="5dp"
             android:drawableStart="@drawable/ic_file_upload_white"
             android:text="@string/subir_archivo" />
 
-        <RelativeLayout
-            android:id="@+id/layout_botones_solicitud"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_subir_archivo"
-            android:gravity="center_vertical">
+            android:layout_marginTop="20dp"
+            android:padding="10dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp">
+            <ImageButton
+                android:id="@+id/imageBtn_guardar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|center"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="#FBFDFD"
+                android:src="@drawable/ic_icons8_comprobado"
+                android:tint="#00FDFCFC" />
 
-                <ImageButton
-                    android:id="@+id/imageBtn_guardar"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="bottom|center"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:backgroundTint="#FBFDFD"
-                    android:src="@drawable/ic_icons8_comprobado"
-                    android:tint="#00FDFCFC" />
+            <ImageButton
+                android:id="@+id/imageBtn_cancelar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|center"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="#FBFDFD"
+                android:src="@drawable/ic_icons8_cancelar" />
 
-                <ImageButton
-                    android:id="@+id/imageBtn_cancelar"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="bottom|center"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:backgroundTint="#FBFDFD"
-                    android:src="@drawable/ic_icons8_cancelar" />
+        </LinearLayout>
 
-            </LinearLayout>
-        </RelativeLayout>
     </RelativeLayout>
 
 </layout>
