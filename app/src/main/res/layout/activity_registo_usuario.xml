@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -107,6 +113,7 @@
 
     <ImageButton
         android:id="@+id/imageBtn_registrar"
+        android:contentDescription="@string/enviar_informacion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -116,6 +123,7 @@
 
         <ImageButton
             android:id="@+id/imageBtn_no_registrar"
+            android:contentDescription="@string/salir_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -126,3 +134,4 @@
 
 
 </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

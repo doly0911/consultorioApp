@@ -65,6 +65,18 @@
     <string name="subir_archivo">subir archivo</string>
     <string name="busqueda_avanzada">Búsqueda Avanzada</string>
     <string name="por_cedula">Por Cédula</string>
+    <string name="alta_chip_filtro">Alta</string>
+    <string name="media_chip_filtro">Media</string>
+    <string name="baja_chip_filtro">Baja</string>
+    <string name="guardar_solicitud">Guardar</string>
+    <string name="cancelar_solicitud">Cancelar</string>
+    <string name="logo_app">logo_udea</string>
+    <string name="enviar_informacion">enviar_información</string>
+    <string name="salir_info">salir</string>
+    <string name="por_persona">Por Persona</string>
+    <string name="por_prioridad">Por Prioridad</string>
+    <string name="sin_puntos_ni_espacios">Sin puntos, ni espacios</string>
+    <string name="ingrese_texto">Ingrese texto</string>
 
     <string-array name="prioridad_array">
         <item>Alta</item>

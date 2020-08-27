@@ -1,88 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:id="@+id/login_view"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center|top"
-        android:orientation="vertical">
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/img_logo_inicio"
+        <LinearLayout
+            android:id="@+id/login_view"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/logo_verde_udea" />
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center|top"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txt_titulo_consultorio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/app_title"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="27sp" />
+            <ImageView
+                android:id="@+id/img_logo_inicio"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="@string/logo_app"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo_verde_udea" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            <TextView
+                android:id="@+id/txt_titulo_consultorio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/app_title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="27sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
-        <EditText
-            android:id="@+id/emailEditText"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/email_edit_text"
-            android:importantForAutofill="no"
-            android:inputType="textEmailAddress" />
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/email_edit_text"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
-        <EditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/password_edit_text"
-            android:importantForAutofill="no"
-            android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/password_edit_text"
+                android:importantForAutofill="no"
+                android:inputType="textPassword" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
-        <Button
-            android:id="@+id/loginButton"
-            style="@style/custom_button"
-            android:layout_width="111dp"
-            android:layout_height="39dp"
-            android:fontFamily="@font/roboto_slab_regular"
-            android:padding="10dp"
-            android:text="@string/enter_button_str"
-            android:textSize="12sp" />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
+            <Button
+                android:id="@+id/loginButton"
+                style="@style/custom_button"
+                android:layout_width="111dp"
+                android:layout_height="39dp"
+                android:fontFamily="@font/roboto_slab_regular"
+                android:padding="10dp"
+                android:text="@string/enter_button_str"
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:id="@+id/layout_registarse"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
                 android:orientation="horizontal">
 
                 <TextView
@@ -99,18 +98,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_slab_regular"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimaryDark"
                     android:text="@string/registrarse"
-                    />
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
+        </LinearLayout>
 
-        </RelativeLayout>
-
-
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </layout>
