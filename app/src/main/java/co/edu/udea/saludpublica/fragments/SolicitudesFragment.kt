@@ -3,13 +3,10 @@ package co.edu.udea.saludpublica.fragments
 
 import android.app.AlertDialog
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -17,13 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import co.edu.udea.saludpublica.R
-import co.edu.udea.saludpublica.RegistoUsuarioActivity
 import co.edu.udea.saludpublica.adapters.SolicitudAdapter
-import co.edu.udea.saludpublica.dao.DefaultSolicitudDao
+import co.edu.udea.saludpublica.dao.solicitud.DefaultSolicitudDao
 import co.edu.udea.saludpublica.databinding.FragmentSolicitudesBinding
 import co.edu.udea.saludpublica.models.Solicitud
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.*
 
 /**
  * A simple [Fragment] subclass.
@@ -73,7 +67,7 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
     }
     //handle item clicks of menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item!!.itemId
+        val id = item.itemId
         //handle item clicks
         if (id == R.id.filtro_menu){
             //mostrar el Dialog
