@@ -47,4 +47,6 @@ dependencies {
     implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
     implementation "com.google.android.material:material:$version_material"
     implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
 }

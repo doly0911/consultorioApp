@@ -5,7 +5,7 @@ import co.edu.udea.saludpublica.models.Solicitud
 import co.edu.udea.saludpublica.enums.PrioridadEnum
 
 class DefaultSolicitudDao : SolicitudDao {
-    override fun getSolicitudes(): List<Solicitud> {
+    override fun getSolicitudes(): MutableList<Solicitud> {
         val solicitudes = ArrayList<Solicitud>()
         solicitudes.add(Solicitud("104563312", "Ester Bedoya", "Ayuda",
             "prueba", PrioridadEnum.BAJA, MedioRespuestaEnum.CORREO))

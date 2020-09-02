@@ -46,6 +46,10 @@ class SolicitudAdapter (private val data :List<Solicitud>, private val onclick :
                     listener.btnResponderOnClick(item,it)
                 }
 
+                btnEliminar.setOnClickListener{
+                    listener.btnEliminarOnClick(item,it)
+                }
+
                 executePendingBindings()
             }
         }
@@ -55,6 +59,8 @@ class SolicitudAdapter (private val data :List<Solicitud>, private val onclick :
     interface SolicitudAdapterOnClickListener {
         fun btnEditarOnClick(solicitud: Solicitud, view : View)
         fun btnResponderOnClick(solicitud: Solicitud, view : View)
+        fun btnEliminarOnClick(solicitud: Solicitud, view : View)
+
     }
 
 }

@@ -9,6 +9,8 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +20,7 @@ import co.edu.udea.saludpublica.adapters.SolicitudAdapter
 import co.edu.udea.saludpublica.dao.solicitud.DefaultSolicitudDao
 import co.edu.udea.saludpublica.databinding.FragmentSolicitudesBinding
 import co.edu.udea.saludpublica.models.Solicitud
+import co.edu.udea.saludpublica.viewmodels.SolicitudesViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -27,6 +30,7 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
     private lateinit var binding: FragmentSolicitudesBinding
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var recyclerView: RecyclerView
+    private lateinit var solicitudesViewModel: SolicitudesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,12 +43,18 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentSolicitudesBinding>(inflater, R.layout.fragment_solicitudes, container, false)
 
+        solicitudesViewModel = ViewModelProvider(this).get(SolicitudesViewModel::class.java)
+        binding.lifecycleOwner = viewLifecycleOwner
         viewManager = LinearLayoutManager(context)
-        val viewAdapter = SolicitudAdapter(getSolicitudes(),this)
-        recyclerView = binding.recyclerViewSolicitudes.apply {
-            layoutManager = viewManager
-            adapter = viewAdapter
-        }
+
+        solicitudesViewModel.solicitudes.observe(viewLifecycleOwner, Observer { newSolicitudes ->
+            val viewAdapter = SolicitudAdapter(newSolicitudes,this)
+            recyclerView = binding.recyclerViewSolicitudes.apply {
+                layoutManager = viewManager
+                adapter = viewAdapter
+            }
+        })
+
 
         //le asigno el id al boton flotante y al dar click lo redirijo al fragmento crear solicitud
         binding.fabCrearSolicitud.setOnClickListener {
@@ -100,4 +110,9 @@ class SolicitudesFragment : Fragment(),  SolicitudAdapter.SolicitudAdapterOnClic
     override fun btnResponderOnClick(solicitud: Solicitud, view: View) {
         view.findNavController().navigate(SolicitudesFragmentDirections.actionSolicitudesFragmentToRespuestaFragment(solicitud))
     }
+
+    override fun btnEliminarOnClick(solicitud: Solicitud, view : View){
+        solicitudesViewModel.eliminarSolicitud(solicitud)
+    }
+
 }
