@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import co.edu.udea.saludpublica.R
@@ -17,6 +18,7 @@ import co.edu.udea.saludpublica.databinding.FragmentCreacionSolicitudBinding
 import co.edu.udea.saludpublica.enums.MedioRespuestaEnum
 import co.edu.udea.saludpublica.models.Solicitud
 import co.edu.udea.saludpublica.populator.PrioridadPopulator
+import co.edu.udea.saludpublica.populator.SolicitudPopulator
 import co.edu.udea.saludpublica.viewmodels.CreacionSolicitudViewModel
 import co.edu.udea.saludpublica.viewmodels.CreacionSolicitudViewModelFactory
 
@@ -57,29 +59,26 @@ class CreacionSolicitudFragment : Fragment() {
         binding.viewModel = viewModel
 
         binding.imageBtnGuardar.setOnClickListener{
-
             if(solicitud != null){
-                solicitud.asunto =  binding.editTxtAsuntoConsulta.text.toString()
-                solicitud.descripcion = binding.editTxtDescripcionConsulta.text.toString()
-                solicitud.prioridad = PrioridadPopulator.populate(binding.radioBtnPrioridad.checkedRadioButtonId)
-                solicitud.medio =  binding.spinner.selectedItem as MedioRespuestaEnum
+                SolicitudPopulator.populate(solicitud,binding)
                 viewModel.update(solicitud)
-
             }else{
-                val newSolicitud = Solicitud(
-                    0,
-                    "123",
-                    "Doly",
-                    binding.editTxtAsuntoConsulta.text.toString(),
-                    binding.editTxtDescripcionConsulta.text.toString(),
-                    PrioridadPopulator.populate(binding.radioBtnPrioridad.checkedRadioButtonId),
-                    binding.spinner.selectedItem as MedioRespuestaEnum
-                )
+                val newSolicitud = Solicitud()
+                newSolicitud.cedula = "123"
+                newSolicitud.persona = "Doly"
+                SolicitudPopulator.populate(newSolicitud,binding)
                 viewModel.insert(newSolicitud)
             }
-
-            this.findNavController().navigate(CreacionSolicitudFragmentDirections.actionCreacionSolicitudFragmentToSolicitudesFragment())
         }
+
+        viewModel.navigateToSolicitudesFragment.observe(viewLifecycleOwner, Observer {
+            if(it == true){
+                this.findNavController().navigate(CreacionSolicitudFragmentDirections
+                        .actionCreacionSolicitudFragmentToSolicitudesFragment())
+                viewModel.doneNavigation()
+            }
+        })
+
         return binding.root
     }
 

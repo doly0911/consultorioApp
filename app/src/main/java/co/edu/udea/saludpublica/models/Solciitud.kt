@@ -18,23 +18,23 @@ data class Solicitud(
     var solicitudId : Long = 0L,
 
     @ColumnInfo(name = "cedula_usr")
-    var cedula: String,
+    var cedula: String = "",
 
     @ColumnInfo(name = "persona")
-    var persona: String,
+    var persona: String = "",
 
     @ColumnInfo(name = "asunto")
-    var asunto: String,
+    var asunto: String = "",
 
     @ColumnInfo(name = "descripcion")
-    var descripcion: String,
+    var descripcion: String = "",
 
     @ColumnInfo(name = "prioridad")
     @TypeConverters(PrioridadConverter::class)
-    var prioridad: PrioridadEnum,
+    var prioridad: PrioridadEnum = PrioridadEnum.BAJA,
 
     @ColumnInfo(name = "medio_respuesta")
     @TypeConverters(MedioRespuestaConverter::class)
-    var medio : MedioRespuestaEnum
+    var medio : MedioRespuestaEnum = MedioRespuestaEnum.CORREO
 
 ) : Parcelable
