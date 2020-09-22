@@ -1,18 +1,18 @@
 package co.edu.udea.saludpublica.enums
 
-enum class MedioRespuestaEnum {
+enum class MedioRespuestaEnum(val value: Int) {
 
-    CORREO {
+    CORREO(0) {
         override  fun toString() : String{
             return "Correo"
         }
     },
-    TELEFONO{
+    TELEFONO(1){
         override  fun toString() : String{
             return "Teléfono"
         }
     },
-    ESCRITO{
+    ESCRITO(2){
         override  fun toString() : String{
             return "Escrito"
         }

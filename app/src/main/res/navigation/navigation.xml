@@ -25,6 +25,9 @@
             android:name="solicitud"
             app:argType="co.edu.udea.saludpublica.models.Solicitud"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_creacionSolicitudFragment_to_solicitudesFragment"
+            app:destination="@id/solicitudesFragment" />
     </fragment>
     <fragment
         android:id="@+id/respuestaFragment"
