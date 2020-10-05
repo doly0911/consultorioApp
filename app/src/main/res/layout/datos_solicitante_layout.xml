@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingBottom="10dp"
+        android:textStyle="bold"
         android:text="@string/datos_del_solicitante"
         android:textSize="18sp" />
 
@@ -51,7 +52,7 @@
             android:id="@+id/txt_nombre_solicitante_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jhonatan Alexander Orozco Blandon" />
+            android:text="Dolly Jiménez" />
 
     </TableRow>
 
@@ -67,7 +68,7 @@
             android:id="@+id/txt_correo_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="santiago12@gmail.com" />
+            android:text="dolly.jimenez@gmail.com" />
 
     </TableRow>
 

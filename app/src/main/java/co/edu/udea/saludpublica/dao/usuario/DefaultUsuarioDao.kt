@@ -13,7 +13,7 @@ class DefaultUsuarioDao : UsuarioDao {
 
     private fun getUsuarios() : List<Usuario>{
         val usuarios = ArrayList<Usuario>()
-        usuarios.add(Usuario("dolly.jimenez@udea.edu.co","123"))
+        usuarios.add(Usuario("prueba","123"))
         return usuarios
     }
 }
