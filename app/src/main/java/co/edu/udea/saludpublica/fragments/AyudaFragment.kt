@@ -21,10 +21,6 @@ class AyudaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        //Modificar el titulo del actionBar
-        (activity as AppCompatActivity).supportActionBar?.title = "Ayuda"
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ayuda, container, false)
     }

@@ -36,10 +36,6 @@ class SolicitudesFragment : Fragment(), SolicitudAdapter.SolicitudAdapterOnClick
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        //Modificar el titulo del actionBar
-        (activity as AppCompatActivity).supportActionBar?.title = "Lista de Solicitudes"
-
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater,

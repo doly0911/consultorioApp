@@ -39,9 +39,6 @@ class CreacionSolicitudFragment : Fragment() {
         val args = arguments?.let { CreacionSolicitudFragmentArgs.fromBundle(it) }
         val solicitud : Solicitud? = args?.solicitud
 
-        //Modificar el titulo del actionBar
-        (activity as AppCompatActivity).supportActionBar?.title = "Nueva Solicitud"
-
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_creacion_solicitud, container, false)
         binding.lifecycleOwner = viewLifecycleOwner

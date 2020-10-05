@@ -25,9 +25,6 @@ class RespuestaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //Modificar el titulo del actionBar
-        (activity as AppCompatActivity).supportActionBar?.title = "Responder Solicitud"
-
         val args = arguments?.let { CreacionSolicitudFragmentArgs.fromBundle(it) }
         val solicitud : Solicitud? = args?.solicitud
 
