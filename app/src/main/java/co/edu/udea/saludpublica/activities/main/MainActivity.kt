@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import co.edu.udea.saludpublica.R
 import co.edu.udea.saludpublica.activities.consultorio.ConsultorioActivity
-import co.edu.udea.saludpublica.activities.registro.RegistoUsuarioActivity
+import co.edu.udea.saludpublica.activities.register.RegisterUserActivity
 import co.edu.udea.saludpublica.database.ConsultarioDatabase
 import co.edu.udea.saludpublica.databinding.ActivityMainBinding
 
@@ -23,14 +23,14 @@ class MainActivity : AppCompatActivity() {
         )
         val database = ConsultarioDatabase.getInstance(this)
         val factory =
-            AutenticacionViewModelFactory(
-                database.usuarioDao
+            AuthViewModelFactory(
+                database.userDao
             )
-        val viewModel = ViewModelProvider(this, factory).get(AutenticacionViewModel::class.java)
+        val viewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
 
         //Lo envia al formulario de registro de usuario
         binding.btnRegistrarse.setOnClickListener {
-            val intent = Intent(this, RegistoUsuarioActivity::class.java)
+            val intent = Intent(this, RegisterUserActivity::class.java)
             startActivity(intent)
         }
 
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.isAuthenticated.observe(this, Observer { isAuth ->
             if(isAuth){
                 val intent = Intent(this, ConsultorioActivity::class.java).apply {
-                    putExtra("usuarioId",viewModel.usuario.value?.usuarioId)
+                    putExtra("userId",viewModel.user.value?.userId)
                 }
                 startActivity(intent)
             }

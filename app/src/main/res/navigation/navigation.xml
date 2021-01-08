@@ -3,44 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/solicitudesFragment">
+    app:startDestination="@id/requestsFragment">
 
     <fragment
-        android:id="@+id/solicitudesFragment"
-        android:name="co.edu.udea.saludpublica.fragments.solicitudes.SolicitudesFragment"
+        android:id="@+id/requestsFragment"
+        android:name="co.edu.udea.saludpublica.fragments.requests.RequestsFragment"
         android:label="Lista de solicitudes">
         <action
-            android:id="@+id/action_solicitudesFragment_to_creacionSolicitudFragment"
-            app:destination="@id/creacionSolicitudFragment" />
+            android:id="@+id/action_requestsFragment_to_requestCreationFragment"
+            app:destination="@id/requestCreationFragment" />
         <action
-            android:id="@+id/action_solicitudesFragment_to_respuestaFragment"
-            app:destination="@id/respuestaFragment" />
+            android:id="@+id/action_requestsFragment_to_forwardFragment"
+            app:destination="@id/forwardFragment" />
     </fragment>
     <fragment
-        android:id="@+id/creacionSolicitudFragment"
-        android:name="co.edu.udea.saludpublica.fragments.creacionsolicitud.CreacionSolicitudFragment"
+        android:id="@+id/requestCreationFragment"
+        android:name="co.edu.udea.saludpublica.fragments.requestcreation.RequestCreationFragment"
         android:label="Crear Solicitud"
         tools:layout="@layout/fragment_creacion_solicitud">
         <argument
-            android:name="solicitud"
-            app:argType="co.edu.udea.saludpublica.models.Solicitud"
+            android:name="request"
+            app:argType="co.edu.udea.saludpublica.models.Request"
             app:nullable="true" />
         <action
-            android:id="@+id/action_creacionSolicitudFragment_to_solicitudesFragment"
-            app:destination="@id/solicitudesFragment" />
+            android:id="@+id/action_requestCreationFragment_to_requestsFragment"
+            app:destination="@id/requestsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/respuestaFragment"
-        android:name="co.edu.udea.saludpublica.fragments.respuesta.RespuestaFragment"
+        android:id="@+id/forwardFragment"
+        android:name="co.edu.udea.saludpublica.fragments.forward.ForwardFragment"
         android:label="Respuesta de la Solicitud"
         tools:layout="@layout/fragment_respuesta">
         <argument
-            android:name="solicitud"
-            app:argType="co.edu.udea.saludpublica.models.Solicitud"
+            android:name="request"
+            app:argType="co.edu.udea.saludpublica.models.Request"
             app:nullable="false" />
     </fragment>
     <fragment
-        android:id="@+id/ayudaFragment"
-        android:name="co.edu.udea.saludpublica.fragments.ayuda.AyudaFragment"
+        android:id="@+id/helpFragment"
+        android:name="co.edu.udea.saludpublica.fragments.help.HelpFragment"
         android:label="Ayuda" />
 </navigation>

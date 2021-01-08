@@ -5,7 +5,7 @@
     <data>
         <variable
             name="solicitud"
-            type="co.edu.udea.saludpublica.models.Solicitud" />
+            type="co.edu.udea.saludpublica.models.Request" />
     </data>
 
 
@@ -43,7 +43,7 @@
                 <TextView
                     android:id="@+id/txt_asunto_value"
                     style="@style/card_txt_value"
-                    android:text="@{solicitud.asunto}"/>
+                    android:text="@{solicitud.topic}"/>
 
             </LinearLayout>
 
@@ -59,7 +59,7 @@
                 <TextView
                     android:id="@+id/txt_prioridad_value"
                     style="@style/card_txt_value"
-                    android:text="@{solicitud.prioridad.toString()}"/>
+                    android:text="@{solicitud.priority.toString()}"/>
 
             </LinearLayout>
 
@@ -75,7 +75,7 @@
                 <TextView
                     android:id="@+id/txt_descripcion_value"
                     style="@style/card_txt_value"
-                    android:text="@{solicitud.descripcion}"/>
+                    android:text="@{solicitud.description}"/>
 
             </LinearLayout>
 

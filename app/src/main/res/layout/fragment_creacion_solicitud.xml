@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="co.edu.udea.saludpublica.fragments.creacionsolicitud.CreacionSolicitudViewModel" />
+            type="co.edu.udea.saludpublica.fragments.requestcreation.RequestCreationViewModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:padding="5dp"
-            tools:context=".fragments.creacionsolicitud.CreacionSolicitudFragment">
+            tools:context=".fragments.requestcreation.RequestCreationFragment">
 
             <!-- DATOS DESDE LA BD PARA SOLICITANTE-->
             <include layout="@layout/datos_solicitante_layout" />

@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
-            tools:context=".activities.registro.RegistoUsuarioActivity">
+            tools:context=".activities.register.RegisterUserActivity">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_bienvenida"
