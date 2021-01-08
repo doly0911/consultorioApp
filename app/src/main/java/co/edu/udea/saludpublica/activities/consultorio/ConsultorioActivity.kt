@@ -1,12 +1,13 @@
-package co.edu.udea.saludpublica
+package co.edu.udea.saludpublica.activities.consultorio
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import co.edu.udea.saludpublica.R
 import co.edu.udea.saludpublica.databinding.ActivityConsultorioBinding
 
 class  ConsultorioActivity : AppCompatActivity() {
@@ -17,9 +18,12 @@ class  ConsultorioActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_consultorio)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.activity_consultorio
+        )
         drawerLayout = binding.drawerLayout
         val navController = this.findNavController(R.id.nav_host_fragment)
+        navController.setGraph(R.navigation.navigation)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)

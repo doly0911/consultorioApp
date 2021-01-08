@@ -1,17 +1,17 @@
-package co.edu.udea.saludpublica.fragments
+package co.edu.udea.saludpublica.fragments.respuesta
 
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.github.aakira.expandablelayout.ExpandableRelativeLayout
 import co.edu.udea.saludpublica.R
 import co.edu.udea.saludpublica.databinding.FragmentRespuestaBinding
+import co.edu.udea.saludpublica.fragments.creacionsolicitud.CreacionSolicitudFragmentArgs
 import co.edu.udea.saludpublica.models.Solicitud
+import com.github.aakira.expandablelayout.ExpandableRelativeLayout
 
 
 /**
@@ -25,7 +25,11 @@ class RespuestaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val args = arguments?.let { CreacionSolicitudFragmentArgs.fromBundle(it) }
+        val args = arguments?.let {
+            CreacionSolicitudFragmentArgs.fromBundle(
+                it
+            )
+        }
         val solicitud : Solicitud? = args?.solicitud
 
         // Inflate the layout for this fragment
@@ -64,6 +68,11 @@ class RespuestaFragment : Fragment() {
             txtMedioRespuestaValue.text = solicitud?.medio.toString()
             txtPrioridadValue.text = solicitud?.prioridad.toString()
         }
+
+        binding.layoutDatosSolicitud.datosSolicitudLayout.apply {
+
+        }
+
     }
 
 

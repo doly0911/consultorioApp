@@ -1,13 +1,11 @@
-package co.edu.udea.saludpublica.fragments
+package co.edu.udea.saludpublica.fragments.ayuda
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-
+import androidx.fragment.app.Fragment
 import co.edu.udea.saludpublica.R
 
 /**

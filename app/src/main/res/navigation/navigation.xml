@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/solicitudesFragment"
-        android:name="co.edu.udea.saludpublica.fragments.SolicitudesFragment"
+        android:name="co.edu.udea.saludpublica.fragments.solicitudes.SolicitudesFragment"
         android:label="Lista de solicitudes">
         <action
             android:id="@+id/action_solicitudesFragment_to_creacionSolicitudFragment"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/creacionSolicitudFragment"
-        android:name="co.edu.udea.saludpublica.fragments.CreacionSolicitudFragment"
+        android:name="co.edu.udea.saludpublica.fragments.creacionsolicitud.CreacionSolicitudFragment"
         android:label="Crear Solicitud"
         tools:layout="@layout/fragment_creacion_solicitud">
         <argument
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/respuestaFragment"
-        android:name="co.edu.udea.saludpublica.fragments.RespuestaFragment"
+        android:name="co.edu.udea.saludpublica.fragments.respuesta.RespuestaFragment"
         android:label="Respuesta de la Solicitud"
         tools:layout="@layout/fragment_respuesta">
         <argument
@@ -41,6 +41,6 @@
     </fragment>
     <fragment
         android:id="@+id/ayudaFragment"
-        android:name="co.edu.udea.saludpublica.fragments.AyudaFragment"
+        android:name="co.edu.udea.saludpublica.fragments.ayuda.AyudaFragment"
         android:label="Ayuda" />
 </navigation>

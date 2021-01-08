@@ -4,36 +4,26 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.udea.saludpublica.databinding.SolicitudViewBinding
 import co.edu.udea.saludpublica.enums.PrioridadEnum
 import co.edu.udea.saludpublica.models.Solicitud
 
 class SolicitudAdapter(private val onclick: SolicitudAdapterOnClickListener)
-    : RecyclerView.Adapter<SolicitudAdapter.SolicitudViewHolder>() {
-
-
-    var data = listOf<Solicitud>()
-        set(value){
-            field = value
-            notifyDataSetChanged()
-        }
+    : ListAdapter<Solicitud, SolicitudAdapter.SolicitudViewHolder> (SolicitudDiffCallback()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SolicitudViewHolder {
         return SolicitudViewHolder.from(this, parent)
     }
 
     override fun onBindViewHolder(holder: SolicitudViewHolder, position: Int) {
-        holder.bind(data[position])
+        holder.bind(getItem(position))
     }
 
-
-    override fun getItemCount(): Int {
-        return this.data.size
-    }
-
-    class SolicitudViewHolder private constructor(val binding: SolicitudViewBinding, private val listener: SolicitudAdapterOnClickListener
-    ) : RecyclerView.ViewHolder(binding.root) {
+    class SolicitudViewHolder private constructor(val binding: SolicitudViewBinding, private val listener: SolicitudAdapterOnClickListener)
+        : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Solicitud) {
             with(binding) {
@@ -77,5 +67,17 @@ class SolicitudAdapter(private val onclick: SolicitudAdapterOnClickListener)
 
     }
 
+
+}
+
+class SolicitudDiffCallback : DiffUtil.ItemCallback<Solicitud>() {
+
+    override fun areItemsTheSame(oldItem: Solicitud, newItem: Solicitud): Boolean {
+      return  oldItem.solicitudId == newItem.solicitudId
+    }
+
+    override fun areContentsTheSame(oldItem: Solicitud, newItem: Solicitud): Boolean {
+        return  oldItem == newItem
+    }
 
 }

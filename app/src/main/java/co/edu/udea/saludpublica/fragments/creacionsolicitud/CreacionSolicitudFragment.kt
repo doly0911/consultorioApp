@@ -1,4 +1,4 @@
-package co.edu.udea.saludpublica.fragments
+package co.edu.udea.saludpublica.fragments.creacionsolicitud
 
 
 import android.os.Bundle
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -19,8 +18,6 @@ import co.edu.udea.saludpublica.enums.MedioRespuestaEnum
 import co.edu.udea.saludpublica.models.Solicitud
 import co.edu.udea.saludpublica.populator.PrioridadPopulator
 import co.edu.udea.saludpublica.populator.SolicitudPopulator
-import co.edu.udea.saludpublica.viewmodels.CreacionSolicitudViewModel
-import co.edu.udea.saludpublica.viewmodels.CreacionSolicitudViewModelFactory
 
 /**
  * A simple [Fragment] subclass.
@@ -36,7 +33,11 @@ class CreacionSolicitudFragment : Fragment() {
     ): View? {
 
 
-        val args = arguments?.let { CreacionSolicitudFragmentArgs.fromBundle(it) }
+        val args = arguments?.let {
+            CreacionSolicitudFragmentArgs.fromBundle(
+                it
+            )
+        }
         val solicitud : Solicitud? = args?.solicitud
 
         // Inflate the layout for this fragment
@@ -51,7 +52,11 @@ class CreacionSolicitudFragment : Fragment() {
         populateActivity(solicitud)
 
         val database = ConsultarioDatabase.getInstance(requireContext())
-        val factory = CreacionSolicitudViewModelFactory(database.solicitudDao)
+        val factory =
+            CreacionSolicitudViewModelFactory(
+                database.solicitudDao
+            )
+        val usuarioId = requireActivity().intent.extras?.get("usuarioId") as Long
         viewModel = ViewModelProvider(this, factory).get(CreacionSolicitudViewModel::class.java)
         binding.viewModel = viewModel
 
@@ -61,8 +66,7 @@ class CreacionSolicitudFragment : Fragment() {
                 viewModel.update(solicitud)
             }else{
                 val newSolicitud = Solicitud()
-                newSolicitud.cedula = "123"
-                newSolicitud.persona = "Doly"
+                newSolicitud.solicitante = usuarioId
                 SolicitudPopulator.populate(newSolicitud,binding)
                 viewModel.insert(newSolicitud)
             }
@@ -70,8 +74,7 @@ class CreacionSolicitudFragment : Fragment() {
 
         viewModel.navigateToSolicitudesFragment.observe(viewLifecycleOwner, Observer {
             if(it == true){
-                this.findNavController().navigate(CreacionSolicitudFragmentDirections
-                        .actionCreacionSolicitudFragmentToSolicitudesFragment())
+                this.findNavController().navigate(CreacionSolicitudFragmentDirections.actionCreacionSolicitudFragmentToSolicitudesFragment())
                 viewModel.doneNavigation()
             }
         })

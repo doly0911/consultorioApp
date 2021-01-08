@@ -1,4 +1,4 @@
-package co.edu.udea.saludpublica.fragments
+package co.edu.udea.saludpublica.fragments.solicitudes
 
 
 import android.app.AlertDialog
@@ -6,7 +6,6 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -19,8 +18,6 @@ import co.edu.udea.saludpublica.adapters.SolicitudAdapter
 import co.edu.udea.saludpublica.database.ConsultarioDatabase
 import co.edu.udea.saludpublica.databinding.FragmentSolicitudesBinding
 import co.edu.udea.saludpublica.models.Solicitud
-import co.edu.udea.saludpublica.viewmodels.SolicitudesViewModel
-import co.edu.udea.saludpublica.viewmodels.SolicitudesViewModelFactory
 
 /**
  * A simple [Fragment] subclass.
@@ -61,15 +58,17 @@ class SolicitudesFragment : Fragment(), SolicitudAdapter.SolicitudAdapterOnClick
         }
 
         val database = ConsultarioDatabase.getInstance(requireContext())
+        val usuarioId = requireActivity().intent.extras?.get("usuarioId") as Long
         val factory =
             SolicitudesViewModelFactory(
-                database.solicitudDao
+                database.solicitudDao,
+                usuarioId
             )
         viewModel = ViewModelProvider(this, factory).get(SolicitudesViewModel::class.java)
 
         viewModel.solicitudes.observe(viewLifecycleOwner, Observer {
             it?.let {
-                viewAdapter.data = it
+                viewAdapter.submitList(it)
             }
         })
 
@@ -111,7 +110,6 @@ class SolicitudesFragment : Fragment(), SolicitudAdapter.SolicitudAdapterOnClick
     }
 
     override fun btnEditarOnClick(solicitud: Solicitud, view: View) {
-        Log.i("SolicitudesFragment", "Btn editar")
         view.findNavController().navigate(
             SolicitudesFragmentDirections.actionSolicitudesFragmentToCreacionSolicitudFragment(
                 solicitud
@@ -122,7 +120,9 @@ class SolicitudesFragment : Fragment(), SolicitudAdapter.SolicitudAdapterOnClick
 
     override fun btnResponderOnClick(solicitud: Solicitud, view: View) {
         view.findNavController().navigate(
-            SolicitudesFragmentDirections.actionSolicitudesFragmentToRespuestaFragment(solicitud)
+            SolicitudesFragmentDirections.actionSolicitudesFragmentToRespuestaFragment(
+                solicitud
+            )
         )
     }
 

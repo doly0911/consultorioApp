@@ -30,37 +30,6 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <LinearLayout
-                android:id="@+id/layout_cedula"
-                style="@style/card_layout">
-
-                <TextView
-                    android:id="@+id/txt_cedula_key"
-                    style="@style/card_txt_key"
-                    android:text="@string/card_cedula" />
-
-                <TextView
-                    android:id="@+id/txt_cedula_value"
-                    style="@style/card_txt_value"
-                    android:text="@{solicitud.cedula}"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_persona"
-                style="@style/card_layout">
-
-                <TextView
-                    android:id="@+id/txt_persona_key"
-                    style="@style/card_txt_key"
-                    android:text="@string/card_persona" />
-
-                <TextView
-                    android:id="@+id/txt_persona_value"
-                    style="@style/card_txt_value"
-                    android:text="@{solicitud.persona}"/>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/layout_asunto"

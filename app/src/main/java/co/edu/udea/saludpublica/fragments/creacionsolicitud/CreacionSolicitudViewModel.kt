@@ -1,4 +1,4 @@
-package co.edu.udea.saludpublica.viewmodels
+package co.edu.udea.saludpublica.fragments.creacionsolicitud
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

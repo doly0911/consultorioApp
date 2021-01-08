@@ -1,4 +1,4 @@
-package co.edu.udea.saludpublica.viewmodels
+package co.edu.udea.saludpublica.fragments.creacionsolicitud
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -9,7 +9,9 @@ class CreacionSolicitudViewModelFactory (private val database : SolicitudDao)
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CreacionSolicitudViewModel::class.java)) {
-            return CreacionSolicitudViewModel(database) as T
+            return CreacionSolicitudViewModel(
+                database
+            ) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

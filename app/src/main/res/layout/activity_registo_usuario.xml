@@ -1,137 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-<RelativeLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="20dp"
-    tools:context=".RegistoUsuarioActivity">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/txt_bienvenida"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:textSize="18sp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/bienvenida_registrarse"/>
+        android:layout_height="match_parent">
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_identificacion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_bienvenida"
-        app:startIconDrawable="@drawable/ic_vpn_key_24dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_id"
+        <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:inputType="number"
-            android:hint="@string/identificacion_registro" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            tools:context=".activities.registro.RegistoUsuarioActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtField_identificacion"
-        app:startIconDrawable="@drawable/ic_person">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:hint="@string/nombre_registro" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_apellidos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtField_nombre"
-        app:startIconDrawable="@drawable/ic_person">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_bienvenida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/bienvenida_registrarse" />
 
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_apellidos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:hint="@string/apellidos_registro" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtField_identificacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_bienvenida"
+                app:startIconDrawable="@drawable/ic_vpn_key_24dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_correo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:layout_below="@+id/txtField_apellidos"
-        app:startIconDrawable="@drawable/ic_email">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_numero_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:inputType="number"
+                    android:hint="@string/identificacion_registro" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_correo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:inputType="textEmailSubject"
-            android:hint="@string/correo_registro" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtField_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtField_identificacion"
+                app:startIconDrawable="@drawable/ic_person">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtField_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtField_correo"
-        app:startIconDrawable="@drawable/ic_visibility_off">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:hint="@string/nombre_registro" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_pass_registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textSize="14sp"
-            android:hint="@string/pass_registro" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="30dp"
-        android:layout_below="@id/txtField_password">
-
-    <ImageButton
-        android:id="@+id/imageBtn_registrar"
-        android:contentDescription="@string/enviar_informacion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@null"
-        android:backgroundTint="#FBFDFD"
-        app:srcCompat="@drawable/ic_icons8_comprobado" />
-
-        <ImageButton
-            android:id="@+id/imageBtn_no_registrar"
-            android:contentDescription="@string/salir_info"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:layout_weight="1"
-            android:backgroundTint="#FBFDFD"
-            app:srcCompat="@drawable/ic_icons8_cancelar" />
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtField_apellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtField_nombre"
+                app:startIconDrawable="@drawable/ic_person">
 
 
-</RelativeLayout>
-</androidx.core.widget.NestedScrollView>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_apellidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:hint="@string/apellidos_registro" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtField_correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_below="@+id/txtField_apellidos"
+                app:startIconDrawable="@drawable/ic_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_correo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:inputType="textEmailSubject"
+                    android:hint="@string/correo_registro" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtField_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtField_correo"
+                app:startIconDrawable="@drawable/ic_visibility_off">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_pass_registro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textSize="14sp"
+                    android:hint="@string/pass_registro" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/txtField_password">
+
+                <ImageButton
+                    android:id="@+id/imageBtn_registrar"
+                    android:contentDescription="@string/enviar_informacion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:backgroundTint="#FBFDFD"
+                    app:srcCompat="@drawable/ic_icons8_comprobado" />
+
+                <ImageButton
+                    android:id="@+id/imageBtn_no_registrar"
+                    android:contentDescription="@string/salir_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FBFDFD"
+                    app:srcCompat="@drawable/ic_icons8_cancelar" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
