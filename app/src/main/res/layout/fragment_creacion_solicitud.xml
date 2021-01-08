@@ -19,7 +19,8 @@
             tools:context=".fragments.requestcreation.RequestCreationFragment">
 
             <!-- DATOS DESDE LA BD PARA SOLICITANTE-->
-            <include layout="@layout/datos_solicitante_layout" />
+            <include layout="@layout/datos_solicitante_layout"
+                android:id="@+id/datos_solicitud_layout"/>
 
             <!-- FORMULARIO CREAR SOLICITUD-->
             <EditText
@@ -27,7 +28,7 @@
                 android:importantForAutofill="no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/gridLayout_datos"
+                android:layout_below="@id/datos_solicitud_layout"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:ems="10"

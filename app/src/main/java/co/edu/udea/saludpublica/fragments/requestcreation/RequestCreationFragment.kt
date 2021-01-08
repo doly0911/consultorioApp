@@ -18,6 +18,7 @@ import co.edu.udea.saludpublica.enums.ChannelEnum
 import co.edu.udea.saludpublica.models.Request
 import co.edu.udea.saludpublica.populator.PriorityPopulator
 import co.edu.udea.saludpublica.populator.RequestPopulator
+import co.edu.udea.saludpublica.populator.UserPopulator
 
 /**
  * A simple [Fragment] subclass.
@@ -52,10 +53,7 @@ class RequestCreationFragment : Fragment() {
         populateActivity(request)
 
         val database = ConsultarioDatabase.getInstance(requireContext())
-        val factory =
-            RequestCreationViewModelFactory(
-                database.requestDao
-            )
+        val factory = RequestCreationViewModelFactory(database.requestDao, database.userDao, request?.owner)
         val userId = requireActivity().intent.extras?.get("userId") as Long
         viewModel = ViewModelProvider(this, factory).get(RequestCreationViewModel::class.java)
         binding.viewModel = viewModel
@@ -76,6 +74,12 @@ class RequestCreationFragment : Fragment() {
             if(it == true){
                 this.findNavController().navigate(RequestCreationFragmentDirections.actionRequestCreationFragmentToRequestsFragment())
                 viewModel.doneNavigation()
+            }
+        })
+
+        viewModel.currentUser.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                UserPopulator.populate(it, binding.datosSolicitudLayout)
             }
         })
 

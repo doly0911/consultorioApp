@@ -7,10 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import co.edu.udea.saludpublica.R
+import co.edu.udea.saludpublica.database.ConsultarioDatabase
 import co.edu.udea.saludpublica.databinding.FragmentRespuestaBinding
 import co.edu.udea.saludpublica.fragments.requestcreation.RequestCreationFragmentArgs
 import co.edu.udea.saludpublica.models.Request
+import co.edu.udea.saludpublica.populator.UserPopulator
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout
 
 
@@ -34,15 +38,25 @@ class ForwardFragment : Fragment() {
         binding = DataBindingUtil.inflate<FragmentRespuestaBinding>(inflater, R.layout.fragment_respuesta, container, false)
         populateFragment(request)
 
-        val layoutDatosSolicitud : ExpandableRelativeLayout = binding.expandablelayoutDatosSolicitud
-        val layoutRespuestaSolicitud : ExpandableRelativeLayout = binding.expandablelayoutRespuestaSolicitud
-        val layoutTrazabilidad : ExpandableRelativeLayout = binding.expandablelayoutTrazabilidad
+        binding.lifecycleOwner = viewLifecycleOwner
+        val database = ConsultarioDatabase.getInstance(requireContext())
+        val factory = ForwardViewModelFactory(database.userDao, request?.owner)
+        val viewModel = ViewModelProvider(this, factory).get(ForwardViewModel::class.java)
+        viewModel.currentUser.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                UserPopulator.populate(it, binding.layoutDatosSolicitud.datosSolicitudLayout)
+            }
+        })
 
-        toogleLayout(binding.btnDatosSolicitud,layoutDatosSolicitud )
-        toogleLayout(binding.btnRespuestaSolicitud,layoutRespuestaSolicitud )
-        toogleLayout(binding.btnTrazabilidad,layoutTrazabilidad )
+        val requestDataLayout : ExpandableRelativeLayout = binding.expandablelayoutDatosSolicitud
+        val requestForwardLayout : ExpandableRelativeLayout = binding.expandablelayoutRespuestaSolicitud
+        val traceLayout : ExpandableRelativeLayout = binding.expandablelayoutTrazabilidad
 
-        collapseLayout(arrayListOf(layoutRespuestaSolicitud,layoutTrazabilidad))
+        toogleLayout(binding.btnDatosSolicitud,requestDataLayout )
+        toogleLayout(binding.btnRespuestaSolicitud,requestForwardLayout )
+        toogleLayout(binding.btnTrazabilidad,traceLayout )
+
+        collapseLayout(arrayListOf(requestForwardLayout,traceLayout))
 
         return binding.root
     }
@@ -66,12 +80,9 @@ class ForwardFragment : Fragment() {
             txtMedioRespuestaValue.text = request?.channel.toString()
             txtPrioridadValue.text = request?.priority.toString()
         }
-
-        binding.layoutDatosSolicitud.datosSolicitudLayout.apply {
-
-        }
-
     }
+
+
 
 
 
