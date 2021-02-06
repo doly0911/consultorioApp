@@ -72,11 +72,27 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtField_telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtField_apellidos"
+                app:startIconDrawable="@drawable/ic_phone">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_telefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:hint="@string/telefono_registro" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtField_correo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:layout_below="@+id/txtField_apellidos"
+                android:layout_below="@+id/txtField_telefono"
                 app:startIconDrawable="@drawable/ic_email">
 
                 <com.google.android.material.textfield.TextInputEditText

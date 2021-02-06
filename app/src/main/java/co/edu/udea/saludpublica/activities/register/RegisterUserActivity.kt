@@ -26,14 +26,17 @@ class RegisterUserActivity : AppCompatActivity() {
         )
         //Modificar el titulo del actionBar
         this.supportActionBar?.title = activityTitle
+
         val database = ConsultarioDatabase.getInstance(this)
         userDao = database.userDao
+
         binding.lifecycleOwner = this
         val factory =
             RegistroViewModelFactory(
                 userDao
             )
         val viewModel = ViewModelProvider(this, factory).get(RegistroViewModel::class.java)
+
         viewModel.navigateToLogin.observe(this, Observer { isDone ->
             if(isDone){
                 viewModel.onNavigateToLoginSuccess()

@@ -53,8 +53,8 @@ class RequestCreationFragment : Fragment() {
         populateActivity(request)
 
         val database = ConsultarioDatabase.getInstance(requireContext())
-        val factory = RequestCreationViewModelFactory(database.requestDao, database.userDao, request?.owner)
         val userId = requireActivity().intent.extras?.get("userId") as Long
+        val factory = RequestCreationViewModelFactory(database.requestDao, database.userDao,userId)
         viewModel = ViewModelProvider(this, factory).get(RequestCreationViewModel::class.java)
         binding.viewModel = viewModel
 

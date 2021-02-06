@@ -5,16 +5,21 @@
     <item
         android:id="@+id/requestsFragment"
         android:icon="@drawable/ic_home"
-        android:title="Inicio"
+        android:title="@string/inicio"
         />
 
     <item
-        android:id="@+id/creacionSolicitudFragment"
+        android:id="@+id/requestCreationFragment"
         android:icon="@drawable/ic_add_box"
-        android:title="Crear solicitud"
+        android:title="@string/crear_solicitud"
         />
     <item
-        android:id="@+id/ayudaFragment"
+        android:id="@+id/helpFragment"
         android:icon="@drawable/ic_help"
-        android:title="Ayuda" />
+        android:title="@string/ayuda" />
+
+    <item
+        android:id="@+id/signOffFragment"
+        android:icon="@drawable/ic_help"
+        android:title="@string/cerrar_sesion" />
 </menu>
