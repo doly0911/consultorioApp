@@ -55,6 +55,7 @@ class RegisterUserActivity : AppCompatActivity() {
         usuario.idNumber = binding.inputNumeroId.text.toString()
         usuario.names = binding.inputNombre.text.toString()
         usuario.lastNames = binding.inputApellidos.text.toString()
+        usuario.phoneNumber = binding.inputTelefono.text.toString()
         usuario.email = binding.inputCorreo.text.toString()
         usuario.password = binding.inputPassRegistro.text.toString()
         return usuario

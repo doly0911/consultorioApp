@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/txt_motivo_eliminacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Motivo de eliminación:"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/input_motivo_eliminacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:hint="Ingrese texto"
+        android:textColorLink="@color/colorPrimaryDark" />
+
+</LinearLayout>

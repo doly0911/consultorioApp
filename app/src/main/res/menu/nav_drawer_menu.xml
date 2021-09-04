@@ -19,7 +19,7 @@
         android:title="@string/ayuda" />
 
     <item
-        android:id="@+id/signOffFragment"
-        android:icon="@drawable/ic_help"
+        android:id="@+id/mainActivity"
+        android:icon="@drawable/ic_cerrar_sesion"
         android:title="@string/cerrar_sesion" />
 </menu>

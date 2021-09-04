@@ -75,6 +75,10 @@
                 <TextView
                     android:id="@+id/txt_descripcion_value"
                     style="@style/card_txt_value"
+                    android:ellipsize="end"
+                    android:scrollHorizontally="true"
+                    android:minLines="2"
+                    android:maxLines="2"
                     android:text="@{solicitud.description}"/>
 
             </LinearLayout>

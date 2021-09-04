@@ -27,8 +27,6 @@ class  ConsultorioActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {

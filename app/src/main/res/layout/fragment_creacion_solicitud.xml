@@ -33,7 +33,7 @@
                 android:layout_marginTop="10dp"
                 android:ems="10"
                 android:hint="@string/asunto_de_su_consulta"
-                android:inputType="textPersonName|textCapWords"
+                android:inputType="text"
                 android:maxLines="2" />
 
             <EditText

@@ -22,6 +22,9 @@ data class User (
     @ColumnInfo(name = "last_names")
     var lastNames : String = "",
 
+    @ColumnInfo(name = "phone_number")
+    var phoneNumber : String = "",
+
     @ColumnInfo(name = "email")
     var email : String = "",
 

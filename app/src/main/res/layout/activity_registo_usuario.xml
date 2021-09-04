@@ -84,6 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
+                    android:inputType="number"
                     android:hint="@string/telefono_registro" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,7 +101,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:inputType="textEmailSubject"
+                    android:inputType="textEmailAddress"
                     android:hint="@string/correo_registro" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -108,8 +109,9 @@
                 android:id="@+id/txtField_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtField_correo"
-                app:startIconDrawable="@drawable/ic_visibility_off">
+                app:passwordToggleEnabled="true"
+                app:startIconDrawable="@drawable/ic_password"
+                android:layout_below="@+id/txtField_correo">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_pass_registro"

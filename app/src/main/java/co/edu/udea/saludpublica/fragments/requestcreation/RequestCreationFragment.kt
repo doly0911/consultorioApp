@@ -1,7 +1,9 @@
 package co.edu.udea.saludpublica.fragments.requestcreation
 
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -86,6 +88,14 @@ class RequestCreationFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnSubirArchivo.setOnClickListener {
+            loadImage()
+        }
+    }
+
     private fun populateActivity(request: Request?){
         binding.apply {
             editTxtAsuntoConsulta.setText(request?.topic)
@@ -95,7 +105,16 @@ class RequestCreationFragment : Fragment() {
                 binding.spinner.setSelection(request.channel.value)
             }
         }
+    }
 
+    private fun loadImage(){
+        val intent = Intent(
+            Intent.ACTION_PICK,
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+        )
+        intent.setType("image/")
+
+        startActivityForResult(Intent.createChooser(intent, "Seleccionar imagen"), 10)
     }
 
 

@@ -121,6 +121,20 @@ class RequestsFragment : Fragment(), RequestAdapter.RequestAdapterOnClickListene
     }
 
     override fun btnRemoveOnClick(request: Request, view: View) {
-        viewModel.delete(request)
+        //mostrar el Dialog
+        val mAlertDialog = AlertDialog.Builder(this.view?.context)
+            .setView(R.layout.layout_eliminar_solicitud)
+            .setNegativeButton("Cancelar") { dialog: DialogInterface?, _: Int ->
+                dialog?.dismiss()
+            }
+            .setPositiveButton("Eliminar") { _: DialogInterface?, _: Int ->
+                viewModel.delete(request)
+            }
+
+        // Create the AlertDialog object and return it
+        mAlertDialog.show()
+
     }
+
+
 }

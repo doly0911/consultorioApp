@@ -11,6 +11,7 @@ class UserPopulator {
                 txtIdValue.text = user.idNumber
                 txtNombreSolicitanteValue.text = user.names.plus(" ").plus(user.lastNames)
                 txtCorreoValue.text = user.email
+                txtCelValue.text = user.phoneNumber
             }
         }
     }

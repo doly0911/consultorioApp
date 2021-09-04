@@ -43,4 +43,8 @@
         android:id="@+id/helpFragment"
         android:name="co.edu.udea.saludpublica.fragments.help.HelpFragment"
         android:label="Ayuda" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="co.edu.udea.saludpublica.activities.main.MainActivity"
+        android:label="MainActivity" />
 </navigation>
